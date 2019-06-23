@@ -1,0 +1,248 @@
+body, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h5 {
+    margin: 0
+}
+
+#wrap {
+    /* width: 1200px; */
+    height: 980px;
+    background: #ffc800;
+    overflow: hidden;
+    /* 使下面階梯照片超出頁面部分隱藏 */
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #01277a;
+    /* position: fixed; */
+    /* z-index: 99; */
+}
+
+.bar {
+    /* width: 960px; */
+    margin: 0 auto;
+    position: relative;
+}
+
+.leftbar {
+    height: 100px;
+    position: absolute;
+    left: 100px;
+    top: 15px;
+}
+
+.rightbar {
+    float: right;
+    position: absolute;
+    right: 100px;
+    top: 22px;
+}
+
+.rightbar ul li {
+    text-align: right;
+    /* list-style-type: none; */
+    display: inline-block;
+    padding: 0 5px;
+
+}
+
+.rightbar a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    
+}
+
+.nav2 {
+    width: 960px;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+    /* overflow-x:hidden */
+    /* z-index: -1; */
+}
+
+.nav2-1 {
+    width: 960px;
+    /* display: block; */
+    position: absolute;
+    top: -1px;
+    right: 430px;
+    /* z-index: -1; */
+} 
+
+.nav1 img {
+    
+    clear:right;
+    display:block;
+    /* 使圖片變成塊級 兩照片才能換行*/
+    margin: 0 auto;
+} 
+
+.space {
+    height: 10px;
+    background:#fff;
+}
+
+.aa {
+   background-color: #ffc800;
+}
+
+.promise {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+
+.promise ul li {
+    display:inline-block;
+    list-style-type: none;
+    height: 40px;
+    line-height: 30px;
+    font-size: 20px;
+    background: url(images/check.png) no-repeat;
+    padding: 10px 0 0 50px;
+    margin: 10px 30px;
+}
+
+.class {
+    /* width: 960px; */
+    margin: 20px auto ;
+    text-align: center;
+    font-size: 26px;
+}
+
+article {
+    width: 960px;
+    /* height: 1000px; */
+    margin: 0 auto;
+}
+
+
+.day1 {
+    width: 100px;
+    height: 100px;
+    line-height: 1;
+    font-weight: 900;
+    background: #004371;
+    text-align: center;
+    font-size: 32px;
+    color:#fff;
+    border-radius: 50%;
+    display:inline-block; 
+    padding: 10px 0;
+    box-sizing: border-box;
+    /* div形狀才不會被撐開 */
+    
+}
+
+/* .day2 {
+    width: 100px;
+    height: 100px;
+    line-height: 1;
+    font-weight: 900;
+    background: #004371;
+    text-align: center;
+    font-size: 32px;
+    color:#fff;
+    border-radius: 50%;
+    display:inline-block; 
+    padding: 10px 0;
+    box-sizing: border-box;
+    div形狀才不會被撐開
+    margin-left: 40%
+} */
+
+.date {
+    font-size: 18px;
+    padding-left: 3px;
+}
+
+.coach {
+    display:inline-block;
+    border-top: 1px solid #c5d4e8;
+    font-size: 30px;
+    color: #0051bd;
+    line-height: 1.3;
+    width: 65%;
+    position: absolute;
+    top: 50px;
+    padding: 8px 0 0 30px ;
+}
+
+.left {
+    width: 43%;
+    /* height: auto; */
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+    
+}
+
+.team {
+    display:inline-block;
+    border-top: 1px solid #c5d4e8;
+    font-size: 30px;
+    color: #0051bd;
+    line-height: 1.3;
+    width: 65%;
+    position: absolute;
+    top: 50px;
+    padding: 8px 0 0 30px ;
+}
+
+.right {
+    width: 43%;
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+    vertical-align: top;
+    
+}
+
+
+
+.dot {
+    border:2px dotted #999;
+    text-align: center;
+    font-size: 23px;
+    padding: 10px 20px;
+    color:#4595db;
+    margin-top: 10px;
+}
+
+h5 {
+    color:#686868;
+    text-align: center;
+    padding: 10px;
+}
+
+.time {
+    margin-top: 3px;
+    border-top: 1px solid #7d7d7d;
+    border-bottom: 1px solid #7d7d7d
+
+}
+
+.list p {
+    font-size: 23px;
+    color:#ff8521;
+    margin: 8px 0;
+}
+
+.list ul li {
+    margin-left: 2.5em;
+    padding: 5px;
+    font-size: 17px;
+    color: #666;
+    /* line-height: 1.5 */
+}
+
+
+
