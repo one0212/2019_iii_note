@@ -1,4 +1,4 @@
-body, div, ul, li {
+body, div, ul, li, section {
     margin: 0;
     padding: 0;
 }
@@ -113,14 +113,16 @@ header {
 
 .class {
     /* width: 960px; */
-    margin: 20px auto ;
+    /* margin: 20px auto 0; */
     text-align: center;
     font-size: 26px;
+    padding: 30px 0;
+
 }
 
-article {
+.day{
     width: 960px;
-    /* height: 1000px; */
+    height: 600px;
     margin: 0 auto;
 }
 
@@ -244,5 +246,80 @@ h5 {
     /* line-height: 1.5 */
 }
 
+.teacher {
+    background: #ddbc61;
+    height: 320px;
+  
+}
 
+.t1 h3, .t1 span {
+    color: #01277a;
+    margin: 5px 0;
+    /* 撐開文字兼間距 */
+}
+
+.introduce {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.teacher img {
+    width: 180px;
+    float: left;
+    
+}
+
+.t1 {
+    float: left;
+    width: 29%;
+    padding: -20px 15px 30px 0;
+    margin: -10px 10px;
+}
+
+.feeback {
+    text-align: center;
+    background: #d9d9d9;
+    height: 260px;
+    color:#292b2c;
+}
+
+.feeback span {
+    display: inline-block;
+    margin: 15px;
+}
+
+.question {
+    height: 450px;
+}
+
+.qa {
+    width: 960px;
+    margin: 0 auto;
+    border-collapse:separate;
+    border-spacing: 0
+}
+
+.qa td {
+    padding: 20px;
+    border: 1px solid #ccc;
+} 
+
+
+/* border-collapse、border-spacing
+都是下在table上 */
+/* 邊框樣式 、padding設在最內層的td上 */
+
+
+/* border-radius設置 */
+tr:first-child td:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px;
+  }
+
+tr:last-child td:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:5px;
+  }
+
+  
 
