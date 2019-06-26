@@ -60,7 +60,7 @@ header {
 
 .nav2 {
     width: 960px;
-    height: 350px;
+    /* height: 300px; */
     margin: 0 auto;
     position: relative;
     /* overflow-x:hidden */
@@ -71,9 +71,9 @@ header {
     width: 960px;
     /* display: block; */
     position: absolute;
-    top: -1px;
-    right: 430px;
-    /* z-index: -1; */
+    top: 10%;
+    right: 50%;
+   
 } 
 
 .nav1 img {
@@ -91,10 +91,12 @@ header {
 
 .aa {
    background-color: #ffc800;
+   margin-top: 20px;
 }
 
 .promise {
     width: 960px;
+    /* height: 30px; */
     margin: 0 auto;
 }
 
@@ -103,11 +105,11 @@ header {
 .promise ul li {
     display:inline-block;
     list-style-type: none;
-    height: 40px;
+    height: 30px;
     line-height: 30px;
     font-size: 20px;
     background: url(images/check.png) no-repeat;
-    padding: 10px 0 0 50px;
+    padding: 5px 0 10px 50px;
     margin: 10px 30px;
 }
 
@@ -143,23 +145,6 @@ header {
     /* div形狀才不會被撐開 */
     
 }
-
-/* .day2 {
-    width: 100px;
-    height: 100px;
-    line-height: 1;
-    font-weight: 900;
-    background: #004371;
-    text-align: center;
-    font-size: 32px;
-    color:#fff;
-    border-radius: 50%;
-    display:inline-block; 
-    padding: 10px 0;
-    box-sizing: border-box;
-    div形狀才不會被撐開
-    margin-left: 40%
-} */
 
 .date {
     font-size: 18px;
@@ -300,8 +285,9 @@ h5 {
 }
 
 .qa td {
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
+    line-height: 25px;
 } 
 
 
@@ -311,15 +297,56 @@ h5 {
 
 
 /* border-radius設置 */
-tr:first-child td:first-child {
+.qa tr:first-child td:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius:5px;
   }
 
-tr:last-child td:last-child {
+.qa tr:last-child td:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius:5px;
   }
+
+  .whiteline {
+      width: 100%;
+      height: 28px;
+  }
+
+  .information {
+      background: #01277a;
+      /* height: 400px; */
+  }
+
+  .class-info {
+    width: 960px;
+    margin: 0 auto;
+    color:#fff;
+
+  }
+
+  .price {
+    border-collapse:separate;
+    border-spacing: 0;
+    display: inline-block;
+    width: 50%;
+ 
+
+  }
+
+.price th {
+    color:#e73e0c;
+
+}
+
+
+.price th, .price td {
+    border: 1px solid #dadada;
+    text-align: center;
+    padding: 15px;  
+  }
+
+
+}
 
   
 
