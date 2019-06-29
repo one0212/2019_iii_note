@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>掩飾JS的三種做法</title>
+    <style>
+    </style>
+</head>
+<body>
+    <!-- 行內--不推薦 -->
+    <h1 onclick="alert('123')">標題標籤</h1>
+    <input type="button" value="按鈕">
+
+    <script>
+        // 遷入的JS,一般寫在body之前
+        alert('demo-alert')
+    </script>
+
+    <!-- 外部引入的js腳本 -->
+    <script src="01.js"></script>
+</body>
+</html>

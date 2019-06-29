@@ -1,0 +1,62 @@
+<style>
+    /*去掉ul底線（none為使其文字的裝飾效果為0）*/
+    ul>li>a{
+        text-decoration: none;
+    }
+
+    /*使<s>標籤的刪除線效果消失*/
+    S{
+        text-decoration:none
+    }
+
+   
+    p{
+         text-decoration:line-through underline;
+         /*添加刪除線及下滑線*/
+        text-indent: 2em
+        /*首行縮進,多用於段落,單位可使用百分比或是em*/
+    }
+.pre{
+    white-space: pre;
+    /*使用html時不論自己預設的空格有多少,瀏覽器中只會顯示一個字符的空白,在CSS中使用white-space可以照自己設置空白*/
+    text-decoration: none;]
+}
+
+.p3{
+    text-decoration:none;
+    border: 1px solid  black;
+    width:200px;
+    height:100px;
+    white-space: nowrap;
+    /*不換行*/
+    overflow: hidden;
+    /*因設定屬性為nowrap,故超過的文字會溢出所設定的邊框,hidden則會將溢出的文字隱藏*/
+
+}
+
+</style>
+
+<body>
+   <ul>
+       <li><a href="#">這是我在Udemy上修的一門課</a></li>
+       <li><a href="#">當初想增進自己JavaScript的能力</a></li>
+       <li><a href="#">這門課和其他一般線上免費的JavaScript教程很不一樣</a></li>
+   </ul>
+
+   <s>刪除線</s>
+   <!--S標籤為文字附上刪除線-->
+
+   <p>以下的圖，最左邊的權重最高，最右邊的權重最低。這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣這門課和其他一般線上免費的JavaScript教程很不一樣</p>
+
+   <p class="pre">
+       cdw o = 109;
+       nfdj e = e * 3;
+            console.log(m);
+
+
+   </p>
+   
+   <p class="p3">我是段落 這門課和其 他一般線上免費的JavaScript教程很不一樣 這門課和其 他一般線上免費的J avaScript教程  很不一樣這門 課和其他一般線上免費的Ja vaScript教程很不  一樣這門課和其他一     般線上免費的  JavaScript教程很不一 樣這門課和其他一般 線上免費的Jav aScript 教程很不一樣這門課和 其他一般線上免費的 
+    JavaScript教程很不 一 樣這門課和其他一  般線上免費的JavaSc  ript教程很不一樣這  門課和其他一般線 上免費的JavaScript 教程很不一樣這門課和其他一般線   上免   費的JavaScript教程很不一樣</p>
+
+</body>

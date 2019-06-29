@@ -1,0 +1,63 @@
+<style>
+
+/*滿足兩個條件1.必須是span標籤2.span又是某tag的第一個孩子*/  
+/*此為偽類選擇器*/  
+/*pseudo class*/
+span:first-child{
+    color:red;
+    font-size: 50px
+}
+
+/*first-letter為段落的首個字符*/
+p::first-letter{
+    color:green;
+    font-size: 50px
+}
+
+p::first-line{
+    color:gray;
+    font-size: 30px
+}
+
+/*before.after則為偽元素*/
+/*偽元素底下一定要放一個content,不然不會有任何效果,content裡也可以放文字*/
+#temp::before{
+    content:"===========我是分隔線============"
+}
+
+#temp::after{
+    content:"---------"
+}
+
+</style>
+
+<body>
+    <span>body span</span>
+    <div id="temp">
+        <span>老大</span>
+        <p>123</p>
+        <span>老二</span>
+        <span>老三</span>
+    </div>
+
+    <div>
+        <p>
+            <span>123456</span>
+            <span>2</span>
+            <span>3</span>
+        </p>
+    </div>    
+
+    <p>
+            以上課程內容，本中心保留變更及調整的權利
+            已完成報名與繳費之學員，課程主辦單位將於開課三天前以E-mail方式寄發上課通知函；
+            若課程因故取消或延期，亦將以E-mail方式通知，如未收到任何通知，敬請來電確認。
+            已完成繳費之學員如欲取消報名，請於實際上課日前以書面通知業務承辦人，主辦單位將退還90% 課程費用。
+            學員於培訓期間如因個人因素無法繼續參與課程，將依課程退費規定辦理之︰上課未逾總時數三分之一，欲辦理退費，可退還所有費用二分之一；上課逾總時數三分之一，則不退費。
+            課程執行單位保留是否接受報名之權利。
+            如遇不可抗拒之因素，課程主辦單位保留修訂課程日期及取消課程的權利。
+            其他上課說明請參閱《學員須知》
+    </p>
+
+</body>
+</html>

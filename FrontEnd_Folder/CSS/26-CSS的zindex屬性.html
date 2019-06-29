@@ -1,0 +1,36 @@
+<style>
+    .ab{
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        border: 1px solid magenta;
+    }
+
+    .d1{
+        /* 中間層 */
+        z-index: 100;
+        /* 數值為0-1000,多用200-300*/
+        left: 100px;
+        top: 100px;
+        background-color: #338899;
+    }
+    .d2{
+        /* 最高層 */
+        z-index: 200;
+        background-color: #773322;
+    }
+
+    .d3{
+        /* 最低層 */
+        z-index: 4;
+        left:20px;
+        top:-30px;
+        background-color: #aa0088;
+    }
+</style>
+
+<body>
+    <div class="ab d1"></div>
+    <div class="ab d2"></div>
+    <div class="ab d3"></div>
+</body>

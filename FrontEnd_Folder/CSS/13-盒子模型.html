@@ -1,0 +1,96 @@
+<style>
+    div{
+    /*可以直接打h100*/        
+    height: 100px;
+    /*可以直接打w100*/
+    width: 100px;
+    
+    /*推薦使用：不需分上下左右*/
+    border: 50px dotted purple;
+    
+    background-color:yellow;
+    
+    padding:100px;
+    /*內邊距：邊框和內容區域的距離*/
+    margin:100px;
+    /*外邊距：盒子邊框和其他元素的距離*/
+    
+
+    /*不建議使用,兼容較差*/
+    border-top-width: 70px;
+    border-top-color:red
+    
+    /*上、右、下、左
+    border-color:teal red yellow black*/
+
+    /*上下、左右
+    border-color:red green*/
+
+    }
+
+    p{  
+        width: 100px;
+        height: 100px;
+        border: 12px;
+        border-style:dashed;
+        /*邊框樣式*/
+        border-top-color:green;
+        /*上邊框顏色*/
+        border-bottom-color: red
+        /*下邊框顏色*/
+
+        
+    }
+    table{
+        border:2px solid pink;
+        border-collapse: collapse;
+        /* 邊框折疊 */
+
+        /* 表格邊框通常為0,會直接寫入border:0 none; */
+
+    }
+
+    input{
+        outline-style: none
+        /* 移除input邊框 */
+    }
+</style>
+
+<body>
+        <div>
+                我是內容
+            </div>
+    
+
+    <p>
+        我是段落
+    </p>
+    
+    <input type="text">
+
+    <table border="2">
+        
+        
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+</body>

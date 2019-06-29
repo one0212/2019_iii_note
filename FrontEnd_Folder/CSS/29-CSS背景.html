@@ -1,0 +1,37 @@
+
+<meta charset="UTF-8">
+<style>
+    
+    div{    
+        height: 400px;
+        width: 400px;
+        border:1px solid brown;
+    }
+    
+    .bg{
+        background-image: url(./img/1.jpg);
+        /* 文件資料是否要位於同一個資料夾才能引入？？？ */
+        background-color: #cda;
+        /* 設置背景圖片,優先級會高於背景色 */
+        
+    }
+
+    .bg2{
+        background-image: url(./img/222.jpg);
+        /* background-repeat: repeat-x; */
+        /* background-repeat: repeat-y; */
+        /* 默認就是橫向.縱向都進行平鋪圖片 */
+        /* background-repeat:repeat; */
+        background-repeat: no-repeat;
+        /* 多用於新聞列表 */
+        padding-left: 75px;
+
+    }
+
+</style>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg2">新聞標題</div>
+
+</body>

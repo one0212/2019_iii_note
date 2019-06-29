@@ -1,0 +1,60 @@
+<style>
+    body, ul, li{
+        padding: 0;
+        margin: 0;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    
+    .news li{
+        height: 100px;
+    }
+
+    .bg{
+        background: url(https://media.istockphoto.com/photos/christmas-stuffed-plush-snoopy-toys-picture-id458650439) no-repeat 3px -30px;
+        padding-left:  65px;
+    }
+
+    .ico{
+        background: url(./img/222.jpg) no-repeat 0 0;
+        width: 66px;
+        height: 90px;
+        /* 塊級元素才能設置寬高 */
+        display: inline-block;
+        vertical-align: middle;
+        /* 使其中線對齊 */
+    }
+
+    .fl .bg-img{
+        background: url(./img/222.jpg) no-repeat 0 0;
+        float:left;
+        /* 浮動後皆為塊級元素,即可以設置寬高 */
+        height: 90px;
+        width: 66px;
+    }
+
+    .fl a{
+        float:left;
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+
+</style>
+
+<body>
+    <ul class="news">
+
+        <li class="bg"><a href="#">新聞內容</a></li>
+        <!-- 背景對齊方式 -->
+
+        <li class="i-tag"><i class="ico"></i><a href="#">新聞內容</a></li>
+        <!-- 使用display:inline-block進行對齊 -->
+
+
+        <li class="fl"><i class="bg-img"></i><a href="#">新聞內容</a></li>
+        <!-- 最後一種方式為浮動 -->
+    </ul>
+</body>

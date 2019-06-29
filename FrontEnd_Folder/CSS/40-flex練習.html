@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .mt {
+        border: 1px solid black;
+        margin: 0 auto;
+        width: 600px;
+        /* height: 100px; */
+        min-height: auto;
+        font-size: 20px;
+    }
+
+    h1 {
+        margin: 0
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    /* .ml-auto {
+        margin-left: auto;
+       
+    } */
+    ul {
+        margin-bottom: 0;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li {
+        width: 80px;
+    }
+
+    @media only screen and (max-width:600px) {
+        nav {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .navbar {
+        justify-content: space-around;
+    }
+
+    .ml-auto {
+        margin-left: 0;
+    }
+</style>
+
+<body>
+    <section class="mt">
+        <h1>Responsive Nav</h1>
+        <nav>
+            <div>brand</div>
+            <ul class="navbar ml-auto">
+                <li>home</li>
+                <li>features</li>
+                <li>pricing</li>
+                <li>disable</li>
+            </ul>
+        </nav>
+    </section>
+</body>
