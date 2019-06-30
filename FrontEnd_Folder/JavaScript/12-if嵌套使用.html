@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if嵌套使用</title>
+</head>
+<body>
+    <script>
+        //如果變量a是一個數字類型,那麼判斷變量a是否大於9,如果大於9則輸出'大於9';否則輸出'非法類型'
+        // 第一步：判斷變量a是否是數字
+        var a = 7;
+        // 判斷變量a的類型,使用typeof則可以獲取他的類型
+        if ( typeof(a) === "number" ) {
+
+            //判斷a是否大於9
+            if ( a > 9 ) {
+                console.log('大於9');
+            } else {
+                console.log('非法類型');
+            }
+        }
+
+        // 第二步：判斷它的大小
+    </script>
+</body>
+</html>
