@@ -1,0 +1,133 @@
+<style>
+    body, div, ul, li{
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        font: 12px/20px "microsoft yahei"
+    }
+
+    /* 去掉列表默認的樣式 */
+    ul, li{
+        list-style: none
+    }
+
+    /* 去除a的下滑線 */
+    a{
+        text-decoration: none;
+        color: #4c4c4c;
+    }
+
+    .tn-nav li{
+        float:left;
+        padding: 0 15px;
+        /* 設置左右內邊距皆為15,合起來及為30px */
+    }
+
+    /* 鼠標移上來時背景變灰色,字體變黃色 */
+    .tn-nav li:hover, .tn-nav li:hover a{
+        background-color:#edeef0;
+        color:#ff8500
+    }
+
+    /* 設置頂部導航欄 */
+    .tn{
+        border-top: 4px solid #ff8500;
+        border-bottom: 1px solid #edeef0;
+        height: 42px;
+        line-height: 42px;
+        /* 行高與高度相等,文字自然會垂直居中對齊 */
+    }
+
+    /*設置版型盒子居中對齊 */
+    .tn-main{
+        margin: 0 auto;
+        width: 960px;
+    }
+
+    /* 設置左側的網誌導航 */
+    .tn-nav{
+        float:left
+    }
+
+    /* 設置右側的用戶導航 */
+    .tn-persion{
+        float:right
+    }
+
+
+    /* """>""" 重要：：為底下所有li標籤皆浮動 */
+    .tn-persion > li{
+        float:left;
+        padding: 0 15px;
+    }
+
+    .tn-persion li:hover, .tn-persion li a:hover{
+        background-color: #edeef0;
+        color:#ff8500;   
+        }
+
+    /* 微薄彈出層處理設置 */
+    .weibo-box {
+        display: none;
+        /* 設置彈出的層為絕對定位 */
+        position:absolute;
+    }
+
+    .weibo:hover .weibo-box{
+        display:block;
+    }
+
+    .weibo-box li{
+        border:1px solid #ff8500;
+        border-top:none;
+        width: 104px;
+        height: 31px;
+        line-height: 31px;
+        margin-left: -15px;
+        padding: 0 15px;
+    }
+
+    .weibo-box a{
+        display:block;
+    }
+
+    .weibo-box li:hover, .weibo-box li a:hover {
+        background-color: #edfff0;
+        color:#ff8500;  
+    }
+
+</style>
+
+<body>
+
+    <div class="tn">
+        <div class="tn-main">
+            
+            <!-- 左側的文字導航 -->
+        
+        <ul class="tn-nav">
+            <li><a href="#">新浪首頁</a></li>
+            <li><a href="#">手機新浪網</a></li>
+            <li><a href="#">移動客戶端</a></li>
+        </ul>
+
+        <!-- 右側的網站用戶導航 -->
+        <ul class="tn-persion">
+            <li><a href="#">登錄</a></li>
+            <li class="weibo">
+                <a href="#">微薄</a>
+                <ul class="weibo-box">
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">評論</a></li>
+                    <li><a href="#">＠我</a></li>
+                </ul>
+            </li>
+            <li><a href="#">博克</a></li>
+            <li><a href="#">郵箱</a></li>
+            <li><a href="#">網站導航</a></li>
+        </ul>
+        
+    </div>
+</body>

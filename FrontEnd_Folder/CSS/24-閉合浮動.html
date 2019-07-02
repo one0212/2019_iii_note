@@ -1,0 +1,41 @@
+<style>
+
+    body,div{
+        padding: 0;
+        margin: 0;
+    }
+
+    div{
+        border:1px solid red;
+    }
+
+    .f1{
+        float:right;
+        height: 100px;
+        width: 100px;
+        background-color:#cda;
+    }
+
+    .clearfix::after, .clearfix::before{
+        content: " "; 
+        /* 裡頭空格是為了兼容opera瀏覽器的bug */
+        display: table;
+    }
+
+    .clearfix::after{
+        clear:both;
+    }
+
+    .clear{
+        zoom: 1;
+    }
+</style>
+
+<body>
+    <div class="clearfix">
+
+        <div class="f1">浮動的div</div>
+        閉合浮動內的啲唉Ｖ
+    </div>
+
+</body>

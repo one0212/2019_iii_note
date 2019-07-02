@@ -1,0 +1,58 @@
+<style>
+body,div{
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    border: 1px solid black;
+}
+
+.head, .foot, .main{
+    margin: 0 auto;
+    width: 960px;
+}
+
+.left, .right, .center{
+    float:left;
+
+}
+
+.left, .right{
+    width: 100px;
+    height: 400px;
+}
+
+
+
+.center{
+    width: 750px;
+    margin: 0 2px;
+    /* 2+750+2剛好符合大小754px */
+}
+
+.main{
+    overflow: hidden;
+    
+}
+
+.foot{
+    clear:both
+    /* 如果底部沒有移動下來代表此設定有問題8 */
+}
+
+
+</style>
+
+<body>
+        <div class="head">頂部</div>
+        <div class="main">
+            <div class="left">左邊</div>
+            <div class="center">中間</div>
+            <div class="right">右邊</div>
+            
+        </div>
+        <div class="foot">底部</div>
+   
+
+</body>

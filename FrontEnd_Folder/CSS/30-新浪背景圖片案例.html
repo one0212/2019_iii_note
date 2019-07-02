@@ -1,0 +1,41 @@
+<style>
+    a{
+        display:inline-block;
+        width: 200px;
+        height: 44px;
+        line-height: 44px;
+        /* 字體則會在中間 */
+        background-image: url(./img/222.jpg);
+        background-repeat: no-repeat;
+        padding-left: 60px
+
+    }
+    a:hover{
+        background-position: left bottom;
+        /* 起始點為左邊 下面開始 */
+    }
+
+    .bg{
+        background-image: url(img/1.jpg);
+        width: 400px;
+        height: 400px;
+        /* background-position: center center; */
+        /* background-position: 60% 70%; */
+        background-position: -480px 0;
+        /* 使背景照片偏移 */
+
+        }
+</style>
+
+<body>
+    <a href="#">
+        新浪微薄
+    </a>
+    <div>
+        <!-- 僅放入原始照片對照 -->
+        <!-- <img src="./img/1.jpg" alt=""> -->
+    </div>
+
+    <div class="bg"></div>
+
+</body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if練習</title>
+</head>
+<body>
+    <script>
+        // 聲明兩個變量a,b 隨機賦值,0-10之間的數,然後如果a > b 則輸出a;
+        // 若a = b 則輸出'=';
+        // 若a < b 則輸出'老馬';
+
+        var a, b;
+        // Math.random() 可以隨機生成一個0-1的小數
+        a = Math.random() * 10; // *10後就會生成一個0-10之間的小數
+        b = Math.random() * 10;
+
+        if ( a > b ) {
+            console.log(a);
+        } else if ( a == b ) {
+            console.log('=');
+        } else {
+            console.log('老馬');
+        }
+         
+     </script>
+</body>
+</html>

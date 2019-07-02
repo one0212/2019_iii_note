@@ -1,0 +1,71 @@
+<style>
+    body, div{
+        padding: 0;
+        margin: 0;
+    }
+
+    div{
+        border: 1px solid blue;
+    }
+
+    .r1{
+        width: 200px;
+        height: 200px;
+
+        position: relative;
+        /* ㄋ相對定位：相對於它原本的位置 */
+        /* 設置了相對定位之後,標籤的CSS就可以設置left,right,top,bottom的CSS屬性 */
+        /* left:10px; */
+        /* top:20px */
+    }
+
+    .ab{
+        position: absolute;
+        left:100px;
+        top:20px;
+
+        height: 100px;
+        width: 100px;
+        background-color: #cda;
+        
+    }
+
+    .parent{
+        height: 400px;
+        width: 400px;
+        background-color: #ca0;
+
+        position: relative;
+        /* 子絕父相，絕對定位會照著父容器設置,未設置此,  .ab會以body為父容器,若要使其照此設置,則需添加一個position:relitive 
+        子絕對定位--要根據誰進行絕對定位,就把誰設置為相對定位(position:relative) */
+    }
+
+    .f{
+        position: fixed;
+        bottom:0;
+        right: 0;
+        height: 100px;
+        width: 100px;
+        background-color: #09c;
+    }
+</style>
+
+<body>
+    <div class="r1">
+        我是div
+    </div>
+
+
+    <div class="parent">
+        父容器
+
+    <div class="ab">
+        絕對定位</div>
+    
+        </div>
+
+    <div class="f">固定定位</div>
+
+
+    
+</body>

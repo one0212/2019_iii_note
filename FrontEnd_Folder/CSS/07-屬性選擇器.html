@@ -1,0 +1,31 @@
+<style>
+    
+    span[class]{
+        color:green;
+    }
+
+    /*擁有id屬性的標籤都會被選擇出來*/
+    [id]{
+        font-size: 50px
+    }
+    span[id="4"]{
+        color:yellow;
+    }
+
+    /*只要包含屬性，就會被選擇出來“~=”*/
+    span[class~="demo"]{
+        font-style: italic
+    }
+
+</style>
+<body>
+    <p>
+        <span class="cur demo">1</span>
+        <span>2</span>
+        <span id="3">3</span>
+        <span id="4">4</span>
+        <span>5</span>
+    </p>
+
+
+</body>

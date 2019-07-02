@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if練習</title>
+</head>
+<body>
+    <script>
+        // 2.給一個數值變量（1-7之間）,如果是6.7輸出週末,否則輸出工作日
+
+        var a = 7;
+        // if (a == 6) {
+        //     console.log('週末');
+        // } else if (a ==7 ){
+        //     console.log('週末');
+        // } else {
+        //     console.log('工作日');
+        // }
+
+
+        // 判斷合併 =>優化
+        if ( a ==6 || a ==7 ) {
+            console.log('週末');
+        } else {
+            console.log('工作日');
+        }
+
+        // 3.判斷用戶名是否為空
+        var userName = null; // undefined '' 'malun' null
+
+
+        // null == undefined => true
+        // if ( userName == null || userName == undefined )
+        if ( userName == null || userName.length == 0 ) {
+            // .length為字符串長度,如果變量為userName = 江宛婷,則會返回3
+            console.log('空')
+        }
+
+        // 4.判斷一個變量是不是字符串,如果是字符串則將字符串轉換成數值類型並返回結果;否則直接把變量轉換成boolean類型輸出結果
+
+        var t = 1234
+
+        if ( typeof(t) === 'string' ) {
+            console.log(Number(t)); // 等同於 console.log(+t)
+        } else {
+            console.log(Boolean(t)); // 等同於 console.log(!!t)
+        } 
+
+        // ==============================================
+        // !!兩個驚嘆號能將數字轉換成boolean
+        // +a 可以把一個變量轉換成數字
+    </script>
+</body>
+</html>

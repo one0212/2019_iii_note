@@ -314,39 +314,118 @@ h5 {
 
   .information {
       background: #01277a;
-      /* height: 400px; */
+      height: 560px;
   }
 
   .class-info {
     width: 960px;
     margin: 0 auto;
     color:#fff;
-
+    /* vertical-align:top; */
   }
 
   .price {
-    border-collapse:separate;
+    border-collapse:collapse;
     border-spacing: 0;
     display: inline-block;
-    width: 50%;
- 
-
   }
 
 .price th {
     color:#e73e0c;
-
+    background-color: #fff;
 }
-
 
 .price th, .price td {
     border: 1px solid #dadada;
     text-align: center;
-    padding: 15px;  
-  }
-
-
+    padding: 20px 13px;  
+    /* margin: 10px; */
+    width: auto;
 }
 
-  
+.class-info ul {
+    list-style: none;
+    display: inline-block;
+    /* height: 500px; */
+}
+
+iframe {
+    width: 45%;
+    padding-left: 15px
+}
+
+.location {
+    max-width: 50%;
+    vertical-align: 100%;
+    /* 與圖片對齊 */
+}
+
+.contact {
+    white-space: nowrap;
+    font-size: 70%;
+}
+
+.buy1, .buy2 {
+    line-height: 20px;
+    display:inline-block;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px;
+    width: 30%;
+}
+
+.buy1 {
+    background-color: #ea5902;
+    border:1px solid #ea5902;
+    border-radius: 3px;
+    margin-left: 10%;
+}
+
+.buy2 {
+    background-color: #004EA3;
+    border:1px solid #004EA3;
+    border-radius: 3px;
+    /* margin-left: 10%; */
+}
+
+.td1 {
+    background: #efefef;
+    color: #01277a;
+}
+
+.td2 {
+    background: #e73e0c
+}
+
+.td3 {
+    background: #efefef;
+    color:#e73e0c;
+}
+
+.td4 {
+    background:#ff840a;
+}
+
+.contact a {
+    color:#fff100;
+}
+
+.copyright {
+    /* margin: 0; */
+    text-align: center;
+    background: #001e5e;
+}
+
+.copyright {
+    /* width: 960px; */
+    margin: 0 auto;
+}
+.copyright p {
+    font-size: 12px;
+    margin: 0;
+    padding: 15px;
+    color:#fff;
+}
+
 

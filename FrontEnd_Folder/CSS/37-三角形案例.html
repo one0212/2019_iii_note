@@ -1,0 +1,69 @@
+<style>
+    body, div{
+        padding: 0;
+        margin: 0;
+    }
+    .main{
+        width: 600px;
+        margin: 100px auto;
+    }
+    .bt, .b2{
+        position: relative;
+        /* 為了不讓其影響偽元素影響其位置故須用上絕對定位 */
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        color:#eee;
+        text-align: center;
+        background-color: #9900cc;
+        border:1px solid #3af;
+        border-radius: 3px;
+
+        }
+    .bt::before{
+        /* 偽元素必須要加content */
+        content: "";
+        position: absolute;
+        left:45%;
+        top: -18px;
+        /* !!!!!原本設置-9px!!!! */
+        /* 往上的話為負值並乘以兩倍的border */
+        display: block;
+        width: 0px;
+        height:0px;
+        /* background-color: green; */
+        /* 設置完border-color後記得要去掉背景,因背景可以穿越邊框 */
+        border:9px solid #90c;
+        border-color:transparent transparent #90c;
+        border-style:dashed dashed solid;
+        }
+
+    .b2::before{
+        content: "";
+        height: 0;
+        width: 0;
+        display: block;
+        position: absolute;
+        left:-10%;
+        top:12px;
+        /* 大部分都適用left top */
+        border:6px solid lightgreen;
+        border-color:transparent #90c transparent transparent;
+        border-style: dashed solid dashed dashed;
+      
+    }            
+
+</style>
+
+<body>
+    <div class="main">
+        <div class="bt">
+            氣泡按鈕
+        </div>
+        <hr>
+
+        <div class="b2">
+            左側的氣泡扭
+        </div>
+    </div>
+</body>

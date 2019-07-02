@@ -1,0 +1,59 @@
+<style>
+    div{
+        border: 1px solid palevioletred
+    }
+    
+    .child{
+        background-color:cda;
+        width: 100px;
+        height: 100px;
+
+
+        float:left;
+        /* 浮動後會高度塌陷 */
+
+        
+    }
+
+    .parent{
+        overflow: hidden;
+        /* 解決高度塌陷問題,須於父容器中進行設置 */
+        /* 意為超出部分隱藏,具有包裹性 */
+    }
+
+    .d3{
+        height: 300px;
+        /* 因有設置父容器overflow:hidden,具包裹性部分仍會把高度設置之下的div包裹住 */
+    }
+
+    p{
+        border:1px solid brown;
+        width: 50px;
+        height: 150px;
+
+        /* overflow: hidden; */
+        /* overflow: visible---默認 */
+        overflow:auto
+
+    } 
+
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child d3">3</div>
+    
+    </div>
+
+    <p>
+            當文字長度超過區塊的時候，自動產生水平方向的 scrollbar（卷軸），圖二使用的是 overflow:visible，可以看到文字已經超出了紫色的區塊，卻完全沒有顯示 scrollbar，圖三則是使用了 overflow:hidden，所以文字區雖然超出範圍，但是並沒有顯示卷軸，文字也沒有完整的顯示，因為超出的部分已經被隱藏了，最後看到圖四使用的是 overflow:scroll 自動產生卷軸，與圖一不一樣的是多出了垂直方向的卷軸，僅管垂直方向並不需要捲軸。區塊的時候，自動產生水平方向的 scrollbar（卷軸），圖二使用的是 overflow:visible，可以看到文字已經超出了紫色的區塊，卻完全沒有顯示 scrollbar，圖三則是使用了 overflow:hidden，所以文字區雖然超出範圍，但是並沒有顯示卷軸，文字也沒有完整的顯示，因為超出的部分已經被隱藏了，最後看到圖四使用的是 overflow:scroll 自動產生卷軸，與圖一不一樣的是多出了垂直方向的卷軸，僅管垂直方向並不需要捲軸。
+
+    </p>
+
+
+
+
+
+</body>

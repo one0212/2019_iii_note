@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循環語句</title>
+</head>
+<body>
+    <script>
+        // 計算1-100的和
+        var t = 0;
+        var i = 1; // 循環的索引
+
+        //當滿足這個判斷表達式(i <= 100)為真值的時候,會不斷循環執行語句塊
+        while ( i <= 100) {
+            // 循環語句塊
+            t += i; // =>1 =>3 =>6 =>10 =>15 ...
+            // t = t + i 
+            i++; // =>2 =>3 =>4 =>5 =>6 ...
+        }
+        console.log(t);
+
+        // 第一步：判斷表達式是否為真值（1,true,非空字符串等）
+        // 第二步：如果是真值,則執行while語句塊,否則結束while語句的循環,繼續執行後面的語句
+        // 繼續重複第一步和第二步
+    </script>
+</body>
+</html>

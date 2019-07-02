@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>除法運算符</title>
+</head>
+<body>
+    <script>
+        // 1.如果是兩個正常數字運算,就會按照數字的除法得到計算
+        var n1 = 99999e4000;
+        var n2 = 0.00000000000000000000000000000000000000000000000000000000001;
+        var t = n1 / n2;
+        console.log(t); //n1 / n2 的結果超出了es的數值表示範圍,結果就會是infinity
+
+        // 2.操作數是NaN,那麼結果一定是NaN
+        var n3 = NaN;
+        var t2 = n1 / n3; // => NaN
+        var t3 = n3 / n2; // => NaN
+
+        // 3.如果是infinity和infinity進行相除結果是NaN
+        console.log(Infinity / Infinity); // = NaN
+
+        // 4. 0 / 0
+        console.log(0 / 0); // => NaN
+        console.log( '9/0=' + (9 / 0)); // => Infinity
+
+        // 5.如果infinity 除以任何數 結果都是Infinity
+        console.log('Infinity / 8 = ' +(Infinity / 8)); // => Infinity
+    </script>
+</body>
+</html>

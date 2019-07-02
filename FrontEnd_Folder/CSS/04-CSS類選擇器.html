@@ -1,0 +1,150 @@
+<head>
+
+    <title>CSS類選擇器</title>
+
+</head>
+
+
+
+<style>
+        .左營高中 {
+            color: green
+        }
+        li.classname1 {
+            color:red
+        }
+        .classname1 {
+            color:pink
+        }
+        .classname2 {
+            color:yellow
+        }
+        .classname3 {
+            color:blue
+        }
+    
+        .sit1 {
+            color:orange
+        }
+    
+        .彌陀國中 .class3 .sit1{
+            color:white
+        }
+    
+        .左營高中 .class2 span {
+            font-size: 30px
+        }
+    
+        .sit3 {
+            font-style:italic
+        }
+    
+        .彌陀國中 .class1 .sit3 {
+            font-style:normal
+        }
+    
+            .a-1 {color:greenyellow;}
+        /*類選擇器class的選擇符"."*/
+        
+            .xcc {background-color:orange;}
+        /*class可以有重複的標籤，id則不行
+        且class可以擁有多個值 如下：class="a-1 xcc"*/
+
+    /*標籤指定式選擇器*/    
+    li.sss {
+        font-size: 30px
+             }
+    
+    /*後代選擇器*/
+    .news li {
+            color: green
+        }     
+    /*並集選擇器：a-1與a-2*/
+    .a-1, .a-2{
+        font-style: italic/*斜體*/
+    }
+    
+    </style>
+<body>
+<h1>韓國瑜圖樣水溝蓋？ 民進黨里長打造的</h1>
+<!--option＋Ｚ可以自動換行-->
+
+<p>高市新興區德生里最近出現印有龍鳳、高市長韓國瑜牽著狗的圖樣的金色水溝蓋，為民進黨籍里長吳三雄催生打造。韓國瑜說，不管各種符號、圖案、設計，如高雄人覺得高雄發大財很開心，願意在各方面表達，他都樂觀其成。</p>
+
+
+<!--class命名規範同id-->
+
+<p class="a-1">對於金色水溝蓋，里長吳三雄表示，希望韓看到能認同，多採用他設計好用的水溝蓋。對有網友批他拍馬屁，他強調不可能，因自己是民進黨員、高市黨部執委，只是希望市長看了能多推廣使用。</p>
+
+<p class="a-2">韓國瑜上午在議會受訪表示，該名里長是民進黨籍，也講得很清楚，「不管各種符號、圖案、設計，如果高雄人大家都覺得高雄發大財，覺得非常開心，也願意在各種方面表達，包括小物等，我是樂觀其成，且他跟政治上支持我一點關係都沒有，因為他是民進黨籍，他也講得非常清楚。」</p>
+
+
+<ol class="news">
+    <li>北京</li>
+    <li class="sss">南京
+        <span class="sss">span1</span>
+        <span class="sss">span1</span>
+        <span class="sss">span1</span>
+        <span class="sss">span1</span>
+    </li>
+    <li class="ppp">台灣 綠色
+        <span class="ppp">高雄 綠色</span>
+        <ol>
+            <li class="ppp">台北 白色
+                <span class="ppp">西門 藍色</span>
+                <ol>
+                    <li class="ppp">萬華 紅色</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+ </ol>
+
+<div>
+    <div class="左營高中">
+        <ol>
+            <li class="class1">
+                <p class="className1">紅班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+            <li class="class2">
+                <p class="className2">黃班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+            <li class="class3">
+                <p class="className3">藍班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+        </ol>
+    </div>
+    <div class="彌陀國中">
+        <ol>
+            <li class="class1">
+                <p class="className1">紅班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+            <li class="class2">
+                <p class="className2">黃班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+            <li class="class3">
+                <p class="className3">藍班</p>
+                <span class="sit1">江宛婷</span>
+                <span class="sit2">郭惠慈</span>
+                <span class="sit3">吳懿霆</span>
+            </li>
+        </ol>
+    </div>
+</div>
+</body>
+

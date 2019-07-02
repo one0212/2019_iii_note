@@ -1,0 +1,80 @@
+<style>
+    body, div, ul, li{
+        padding: 0;
+        margin: 0;
+    }
+
+    .btn{
+        width: 100px;
+        height: 40px;
+        border:1px solid #ccc;
+        margin: 100px auto;
+    }
+    .bbs{
+        position: relative;
+    }
+
+    .bbs::before, .bbs::after{
+        content:"";
+        display: block;
+        position: absolute;
+        border:9px solid #ccc;
+        left:40%;
+        top:-18px;
+        border-color: transparent transparent #ccc;
+        border-style: dashed dashed solid;
+
+
+    }
+    .bbs::after{
+        top:-16px;
+        border:9px solid #fff;
+        border-color: transparent transparent #fff;
+        border-style: dashed dashed solid;
+    }
+    ul{
+        list-style: none;
+    }
+    .menu{
+        margin: 0 auto;
+        width: 202px;
+        /* 寬度需與下面的li標籤一致,小三角加上的位置才會在.menu上
+        200+2(border:1px＊2) */
+    }
+    .menu li{
+        overflow: hidden;
+        border:1px solid #ccc;
+        width: 200px;
+        
+    }
+    .menu a{
+        float:left;
+        height: 30px;
+        line-height: 30px;
+        width: 200px;
+        color:#3e3e3e;
+        text-decoration: none;
+        padding-left: 1em;
+
+    }
+    .menu a:hover{
+        background-color: #cecece;
+        color:#fff;
+    }
+
+
+</style>
+
+<body>
+    <div class="btn bbs"> 
+
+    </div>
+
+    <ul class="menu bbs">
+        <li><a href="#">菜單1</a></li>
+        <li><a href="#">菜單2</a></li>
+        <li><a href="#">菜單3</a></li>
+        <li><a href="#">菜單4</a></li>
+        <li><a href="#">菜單5</a></li>
+    </ul>
+</body>
