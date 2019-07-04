@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .line {
+            background-image: url(images/lead_01.png);
+            height: 22px;
+            background-repeat: repeat-x;
+            background-color: #ffc800;
+            background-size: auto;
+        }
+
+        .stair {
+            margin-top: -11%;
+        }
+
+        .time-circle {
+            width: 100px;
+            height: 100px;
+            line-height: 1;
+            font-weight: 500;
+            background: #004371;
+            text-align: center;
+            font-size: 32px;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            margin-top: 5%;
+            padding: 2% 1%;
+        }
+
+        .learn {
+            margin-top: -9%;
+            border-top: 1px solid #c5d4e8
+        }
+
+        .teach h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0051bd;
+            line-height: 1.3;
+        }
+
+        .teach h4 {
+            border: 2px dotted #999;
+            text-align: center;
+            font-size: 23px;
+            font-weight: 700;
+            padding: 10px 20px;
+            color: #4595db;
+            margin-top: 10px;
+        }
+
+        .teach h6 {
+            color: #686868;
+            font-weight: 600;
+        }
+
+        .class-time {
+            margin-top: 20px;
+            border-top: 1px solid #7d7d7d;
+            border-bottom: 1px solid #7d7d7d;
+            text-align: left;
+        }
+
+        .leader {
+            font-size: 23px;
+            font-weight: 700;
+            color: #ff8521;
+            margin: 10px 0 0;
+            text-align: left;
+        }
+
+        .teach ul {
+            text-align: left;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .promise-bar {
+            background-color: #ffc800;
+        }
+
+        .promise ul li {
+            display: inline-block;
+            list-style-type: none;
+            height: 10%;
+            font-size: 20px;
+            background: url(images/check.png) no-repeat;
+            padding: 5px 0 10px 50px;
+            margin: 1% 5%;
+        }
+
+        .img-speaker {
+
+            /* padding-right: 10px; */
+            max-width: 180px;
+        }
+
+        .introduce {
+            display: flex;
+            padding-bottom: 2%;
+        }
+
+        .speaker1 h4,
+        .speaker1 span {
+            color: #143097;
+            font-weight: 700;
+        }
+
+        .speaker1 p {
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .question li {
+            padding: 2%;
+            background: rgb(240, 240, 240);
+            color: rgb(39, 158, 255);
+            line-height: 1.3
+        }
+
+        .address {
+            list-style: none;
+            display: inline-block;
+            color: #fff;
+
+        }
+
+        .address p {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .address th {
+            color: #e73e0c;
+            background: #fff;
+        }
+
+        .price {
+            font-weight: 600;
+            font-size: 19px;
+            padding: 0;
+        }
+
+        .contact {
+            /* white-space: nowrap; */
+            font-size: 85%;
+        }
+
+        .buy1,
+        .buy2 {
+            line-height: 20px;
+            display: inline-block;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px 20px;
+            width: 30%;
+        }
+
+        .buy1 {
+            background-color: #ea5902;
+            border: 1px solid #ea5902;
+            border-radius: 3px;
+            margin-left: 10%;
+
+        }
+
+        .buy2 {
+            background-color: #004EA3;
+            border: 1px solid #004EA3;
+            border-radius: 3px;
+           
+        }
+
+        .copyright {
+            text-align: center;
+            background: #001e5e;
+        }
+
+        .copyright p {
+            font-size: 12px;
+            margin-bottom: 0;
+            padding: 15px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark" style="background: #01277a">
+        <div class="container">
+            <img src="images/mtlogo.svg" alt="">
+            <img src="images/mtschool.svg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <!-- margin-left:auto字體自動往右靠 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">精彩議程</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">課程資訊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">傳真報名</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">預約席位</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FB</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="line"></div>
+
+    <section class="container-fluid" style="background-color: #ffc800;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12  d-md-flex justify-content-center">
+                    <img src="images/lead_03_01.png" alt="" class="img-fluid">
+
+                </div>
+                <div class="col-md-12 d-md-flex justify-content-center">
+                    <img src="images/lead_03_02.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5 d-md-flex justify-content-center">
+                    <img src="images/lead_03_03_01.png" alt="" class="img-fluid  w-50">
+                    <img src="images/lead_03_03_02.png" alt="" class="img-fluid  w-50">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 justify-content-center p-0 stair">
+                <img src="images/download.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid promise-bar">
+        <div class="container promise">
+            <ul>
+                <li>2大標準職能進修</li>
+                <li>1200名以上主管參訓</li>
+                <li>97%以上滿意推薦</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>精 彩 議 程</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="time-circle">
+                    <span style="font-size: 18px"> DAY 1</span><br>
+                    3/13
+                </div>
+                <table class="table text-center learn">
+                    <tbody>
+                        <tr>
+                            <td class="teach">
+                                <h3>教練領導學</h3>
+                                <h4>激發部屬潛能 Ｘ 引導自主成長</h4>
+                                <h6>陳煥庭 / 起初國際台灣分公司執行長</h6>
+                                <p class="class-time">9:30 - 17:00</p>
+                                <p class="leader">教練式領導力</p>
+                                <ul>
+                                    <li>激發潛能的練習式領導</li>
+                                    <li>部屬需要教練式領導的時機</li>
+                                    <li>對話的關鍵技巧：讚美與激勵</li>
+                                </ul>
+                                <p class="leader">教練式領導四流程</p>
+                                <ul>
+                                    <li>了解部署狀態：融入與抽離的提問技巧</li>
+                                    <li>建立信賴關係：同理心訓練 + 自我表露技術</li>
+                                    <li>釐清問題核心：有效溝通的深度探詢</li>
+                                    <li>持續成長動能：引導改變策略</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 ">
+                <div class="time-circle">
+                    <span style="font-size: 18px"> DAY 2</span><br>
+                    3/26
+                </div>
+                <table class="table text-center learn">
+                    <tbody>
+                        <tr>
+                            <td class="teach">
+                                <h3>團隊經營學</h3>
+                                <h4>團隊成員判讀 Ｘ 團隊發展策略</h4>
+                                <h6>林聖修 / 丞鑫企業管理顧問有限公司創辦人</h6>
+                                <p class="class-time">9:30 - 17:00</p>
+                                <p class="leader">組建核心團隊</p>
+                                <ul>
+                                    <li>團隊組建四象限：I, It, Its, We</li>
+                                    <li>判讀團隊人才：部屬類型辨識與實戰</li>
+                                    <li>盤點領導風格：領導者的自察與突破</li>
+                                </ul>
+                                <p class="leader">打造團隊動能</p>
+                                <ul>
+                                    <li>解決團隊問題的思考邏輯，判別類型 > 擬定策略 > 有效溝通 > 展開行動</li>
+                                    <li>團隊動態管理心法：3個關鍵與6個步驟</li>
+                                    <li>團隊定錨與人才策略地圖</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid" style="background-color: #ddbc61;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center d-md-flex my-4 justify-content-center">
+                    <h2>講 師 介 紹</h2>
+                </div>
+                <div class="col-md-6 d-md-flex justify-content-md-center introduce">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-5">
+                            <div class="photo">
+                                <img src="images/speaker_01.png" alt="" class="img-fluid img-speaker d-block mx-auto">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-7">
+                            <div class="speaker1">
+                                <h4>陳煥庭</h4>
+                                <span>起初國際台灣分公司執行長</span>
+                                <p>國內深層溝通的權威講師，擅長教練是領導與團隊激勵，知識理論和實用技巧同時掌握。一萬場以上授課經歷，合作企業如台積電、星巴克與中國信託等。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-md-flex justify-content-center introduce">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-5">
+                            <div class="photo">
+                                <img src="images/speaker_02.png" alt="" class="img-fluid img-speaker d-block mx-auto">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-7">
+                            <div class="speaker1">
+                                <h4>林聖修</h4>
+                                <span>丞鑫企業管理顧問有限公司創辦人</span>
+                                <p>擅長微行為洞察、教練式引導與情商力管理。以教練思維為核心，行為洞察為動力，協助企業改善組織運作，優化團隊能量。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="container-fluid">
+
+
+
+    </section>
+
+    <section class="container text-center my-5">
+        <h2>常 見 問 題</h2>
+        <div class="question my-4">
+            <ul class="list-group text-left">
+                <li class="list-group-item">Ｑ 雙日課一定要一起購買嗎？只上單堂課會影響學習效果嗎？</li>
+                <li class="list-group-item" style="background:#fff;color:#292b2c">Ａ
+                    可以只報名單堂課，兩堂課程內容是完整的，沒有先修或基礎需求，若您目前只對單一主題有興趣，可以只報名單堂，之後再依需要參加即可。商學院精選這兩堂課，推薦您一起參與，完整掌握帶人的技術。</li>
+                <li class="list-group-item">Ｑ 公司申請報帳有時間限制，付款後大概多久可以收到發票呢</li>
+                <li class="list-group-item">Ｑ 付款後若臨時有行程更動，可以退費嗎？</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container-fluid" style="background: #01277a">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center my-5">
+                    <h2 style="color:#fff;">課 程 資 訊</h2>
+                </div>
+                <div class="col-md-6 col-sm-12 d-md-flex justify-content-center">
+                    <ul class="address ">
+                        <li style="margin-bottom:15px">地 點：張榮發國際會議中心（台北市中正區中山南路11號）</li>
+                        <table class="table table-bordered text-center" width="100%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">一般報名</th>
+                                    <th scope="col">早鳥優惠</th>
+                                    <th scope="col">三人以上團報</th>
+                                    <th scope="col">兩堂套票</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="price">
+                                    <td style="color:#01277a;background: #efefef;">每人4,500元</td>
+                                    <td style="color:#fff;background: #e73e0c">每人4,000元</td>
+                                    <td style="color:#e73e0c;background: #efefef">每人3,700元</td>
+                                    <td style="color:#fff;background: #ff840a">每人7,400元</td>
+                                </tr>
+                                <tr>
+                                    <td style="color:#fff" colspan="4">*3/13教練指導：早鳥至2/27
+                                        *3/26團隊經營：早鳥至3/14本課程附午餐與午茶；每堂贈送《經理人月刊》1期（4月號起，將以掛號寄出）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <li class="contact">活動洽詢：02-8773-9808 分機355　楊小姐 <a href="mailto:karen.yang@managertoday.com.tw"
+                                style="color:#fff100">karen.yang@managertoday.com.tw</a></li>
+                        <li class="contact">客服專線：02-8771-6326　服務時間：週一到週五9:30~12:30；13:30~17:00</li>
+                        <li class="buy1 p-3 my-3">線上報名</li>
+                        <li class="buy2 p-3 my-3">下載報名表</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-12 d-md-flex justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.862925961837!2d121.51648511500638!3d25.03872548397019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a975c13ae63d%3A0x99f529730969be7f!2z5by15qau55m85Z-66YeR5pyD!5e0!3m2!1szh-TW!2stw!4v1561557728909!5m2!1szh-TW!2stw"
+                        width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+    </section>
+    <footer class="copyright">
+        <p>主辦單位保留活動及課程大綱異動之權利，更新資訊已活動網站內容為主。<br>
+            &copy;2018 Bussiness Next Publishing Crop. All Right Reserved. 106台北市光復南路102號9樓</p>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
