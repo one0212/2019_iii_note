@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shadow</title>
+    <style>
+        .box {
+            width: 140px;
+            height: 140px;
+            background: lightsalmon;
+            margin: 30px auto;
+            transition: 1s;
+        }
+        .shadow1 {
+            box-shadow: 5px 5px 10px rgb(251, 10, 10)
+            /* x軸 y軸 模糊程度 顏色  */
+        }
+
+        .shadow2 {
+            box-shadow: 5px 5px 10px 10px rgb(251, 10, 10)
+            /* x軸 y軸 模糊程度 擴散程度 顏色  */
+        }
+
+        .shadow3:hover {
+            box-shadow: 5px 5px 10px 10px inset rgb(251, 10, 10)
+            /* x軸 y軸 模糊程度 擴散程度 內陰影 顏色  */
+        }
+
+        .shadow3:active {
+            box-shadow: 5px 5px 10px 10px inset rgb(48, 96, 255)
+            /* x軸 y軸 模糊程度 擴散程度 內陰影 顏色  */
+        }
+
+        .shadow4 {
+            box-shadow: 5px 5px 20px 10px rgb(251, 10, 10),-5px -5px 20px 10px greenyellow
+            /* 多個陰影中間以,隔開 */
+        }
+
+        .shadow5 {
+            box-shadow: 0 0 20px inset rgb(251, 10, 10),0 0 40px inset rgb(134, 177, 71);
+            /* 多重內陰影後面的模糊程度需大於前項 */
+            border-radius:50%;
+        }
+
+        .shadow6:hover {
+            box-shadow: 140px 0 0 lightseagreen,-140px 0 0 rgb(8, 156, 8);
+        }
+    </style>
+</head>
+<body>
+    <div class="box shadow1"></div>
+    <div class="box shadow2"></div>
+    <div class="box shadow3"></div>
+    <div class="box shadow4"></div>
+    <div class="box shadow5"></div>
+    <div class="box shadow6"></div>
+</body>
+</html>

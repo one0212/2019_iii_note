@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>opasity</title>
+    <style>
+        .map {
+            height: 500px;
+            background: url(images/map.png) no-repeat;
+            transition: .5s
+        }
+
+        .map.opacity {
+            opacity: 0.5
+        }
+
+        .map.opacity:hover {
+            opacity:1
+        }
+    </style>
+</head>
+<body>
+    <div class="map"></div>
+    <div class="map opacity"></div>
+</body>
+</html>
