@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>border-radius</title>
+    <style>
+        .box {
+            width: 180px;
+            height: 180px;
+            background: lightcoral;
+            margin: 20px;
+        }
+        .border-radius1 {
+            border-radius:20px
+        }
+        .border-radius2 {
+            border-radius: 10px 50px;
+            /* 左上&右下20px 右上&左下30px */
+        }
+        .box2 {
+            width: 200px;
+            height: 150px;
+        }
+        .border-radius3 {
+            border-radius:20px
+        }
+
+        .border-radius4 {
+            border-radius:50%;
+        }
+
+        .border-radius5 {
+            border-radius:100% 0;
+        }
+
+        .border-radius6 {
+            border-radius:20px/50px;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        figure img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box border-radius1"></div>
+    <div class="box border-radius2"></div>
+    <div class="box border-radius3 box2"></div>
+    <div class="box border-radius4"></div>
+    <div class="box border-radius5"></div>
+    <div class="box border-radius6"></div>
+    <hr>
+    <figure class="box border-radius4 overflow-hidden">
+        <img src="images/dr_strange.jpg" alt="">
+    </figure>
+</body>
+</html>

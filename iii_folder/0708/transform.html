@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            transition: .5s;
+            margin: 20px;
+            float: left
+        }
+
+      
+
+
+
+        .translate:hover {
+            transform: translate(20px, 30px);
+            /* 位移X:20px Y:30px*/
+        }
+
+        .rorate:hover {
+            transform: rotate(720deg);
+            /* 旋轉兩圈 */
+        }
+
+        .scale:hover {
+            transform: scale(0.8);
+            /* 縮小0.8倍 */
+        }
+
+        .skew:hover {
+            transform: skewX(10deg);
+            /* X軸傾斜10度 */
+        }
+
+        .boxwrap {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            float: left;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .boxwrap .box {
+            margin: 0;
+        }
+
+        .scale2:hover .box {
+            transform: scale(0);
+            /* 使滑鼠移動到感應區時即有反應且不會停頓 */
+        }
+
+        .transy .box {
+            transform: translateY(-200px)
+        }
+        .transy:hover .box {
+            transform: translateY(0);
+        }
+
+        .multi:hover .box {
+            transform: translate(100px, 100px);
+            transform: rotate(30deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box translate"></div>
+    <div class="box rorate"></div>
+    <div class="box scale"></div>
+    <div class="box skew"></div>
+
+    <!-- 縮小到不見效果 -->
+    <div class="boxwrap scale2">
+        <div class="box "></div>
+    </div>
+
+    <!-- 關門效果 -->
+    <div class="boxwrap transy">
+        <div class="box "></div>
+    </div>
+
+    <!-- 同時位移+旋轉 -->
+    <div class="boxwrap multi">
+            <div class="box "></div>
+        </div>
+    
+</body>
+
+</html>
