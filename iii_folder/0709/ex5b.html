@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pic_wrap {
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .pic-title {
+            position: absolute;
+            z-index: 1;
+            /* 須把title設定z-index才能在上層 */
+            color:#fff;
+            font-size: 25px;
+            bottom: 0;
+            left: 0;
+            padding: 6px 0;
+            width: 100%;
+            /* 因已設定position:absolute,如果沒有設寬度則text-align會沒有效果 */
+            text-align: center;
+            opacity: .51;
+            transition: .5s;
+            background: #000;
+            transform: translateY(40px);
+        }
+        .picture {
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            background: url(images/slide1.jpeg);
+            background-size: cover;
+            transition: .5s;
+        }
+
+        .pic_wrap:hover .picture {
+            /* opacity: 0.5; */
+        }
+
+        .pic_wrap:hover .pic-title {
+            opacity: .7;
+            transform: translateY(0)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pic_wrap">
+        <div class="pic-title">
+            高雄總圖
+        </div>
+        <div class="picture">
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
