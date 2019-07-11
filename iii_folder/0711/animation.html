@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation</title>
+    <style>
+        @keyframes changeColor {
+            0% {
+                background: pink;
+            }
+            50% {
+                background: lightblue;
+                border-radius: 10px;
+                width: 300px;
+            }
+            100% {
+                background: red
+            }
+            /* from...to可以用百分比設不同斷點 */
+        }
+
+        @keyframes changeWidth {
+            0% {
+                width: 200px;
+            }
+            50% {
+                width: 300px;
+            }
+            100% {
+                width: 200px;
+            }
+        }
+        .box {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: pink;
+            animation-name: changeColor;
+            /* animation-duration: 2s; */
+            /* 動畫持續時間 */
+            /* animation-delay: 2s; */
+            /* 動畫延遲時間 */
+            /* animation-iteration-count: 3; */
+            /* 動畫播放次數 */
+            /* animation-direction: alternate; */
+            /* alternate偶數次則會由反向播回(100->0),畫面即可連續 */
+            /* animation-fill-mode: both; */
+            /* 動畫停止狀態 forwards停在最後狀態;backwards停在最初狀態;both視direction決定停在哪個狀態 */
+            /* animation-timing-function: cubic-bezier(.01,-0.95,.91,1.72)
+             */
+             /* animation-timing-function:steps(6) */
+             animation:changeColor 2s 2 alternate, changeWidth 3s 3 both 
+        }  
+
+        /* .box:hover {
+            animation-play-state:paused;
+            暫停 
+        } */
+
+        .step_start {
+            animation-timing-function:steps(6, start)
+        }
+
+        .step_end {
+            animation-timing-function:steps(6, end)
+        }
+    </style> 
+</head>
+<body>
+    <div class="box step_start"></div>
+    <div class="box step_end"></div>
+</body>
+</html>
