@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: "header header header header"
+            "nav nav nav nav"
+            "main main main aside"
+            "footer footer footer footer";
+            grid-column-gap: 10px;
+        }
+        @media screen and (max-width:768px) {
+            .wrap {
+                grid-template-areas: "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+                grid-template-columns: repeat(1, 1fr)
+            }
+        }
+        header {
+            /* background: lightseagreen; */
+            grid-area: header;
+        }
+        header img {
+            width: 100%;
+            vertical-align: middle;
+        }
+        nav {
+            grid-area:nav;
+            border-bottom:1px solid #ccc
+            
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            
+        }
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            color:#000;
+            transition: .5s;
+        }
+        nav ul li a:hover {
+            background: #ccc;
+            color:#fff;
+
+        }
+        main {
+            /* background: lightpink; */
+            grid-area: main;
+        }
+        aside {
+            /* background: chocolate; */
+            grid-area: aside;
+        }
+        footer {
+            background: palegreen;
+            grid-area:footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <img src="images/food.jpeg" alt="">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Artical</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Footer</a></li>
+            </ul>
+        </nav>
+        <main>
+                <h1>HairMap美髮地圖團隊致力於打造出最貼心實用的美髮資訊交流社群，讓美髮時光成為每個人生命中的美好時刻。</h1>
+        </main>
+        <aside>
+            <h2>我是側邊欄</h2>
+        </aside>
+        <footer>
+           footer
+        </footer>
+    </div>
+</body>
+</html>
