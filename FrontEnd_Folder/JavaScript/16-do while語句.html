@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>do while</title>
+</head>
+<body>
+    <script>
+        var i = 0 ;
+        do {
+            console.log(Math.random() * 100);
+            i++;
+            console.log(i);
+        } while (i < 10);
+        console.log('循環執行完成')
+
+        // 循環的特點
+        // 1.都有一個索引變量,通常為0或1,變量名常用為 i j k
+        // 2.在迴圈內或每次迴圈都要對循環的索引+1...等
+        // 3.都有一個判斷表達式退出的出口
+    </script>
+    <script>
+        // for循環
+        //  for(索引的賦值表達式;判斷表達式;索引的後續處裡表達式) {
+        //     for循環語句塊
+        // }
+
+        // 1.先執行索引賦值表達式,且只執行一次
+        // 2.執行判斷表達式,若為true,執行語句塊,false則結束當前的for迴圈
+        // 3.執行完語句塊,執行索引的後續處理表達式
+        // 4.重複步驟2.3
+
+        for(var i = 1; i <= 10; i++) {
+            console.log(Math.random() *100);
+        }
+    </script>
+</body>
+</html>
