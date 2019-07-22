@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>continue案例</title>
+</head>
+<body>
+    <script>
+        // 計算1-100的和, 去除掉對3取餘為0的數字
+        var i = 1, result = 0;
+
+        for(i = 1; i <= 100; i++) {
+            if(i % 3 == 0) {
+                //不能讓當前的i參與和的運算,略過當前的循環
+                continue; // 繼續下一輪的循環,當前循環結束
+            }
+            result += i;
+        }
+        console.log(result);
+    </script>
+</body>
+</html>
