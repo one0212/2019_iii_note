@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函數</title>
+</head>
+<body>
+    <script>
+        // 函數的定義可以放在函數呼叫之前和之後都可以
+        // 函數的關鍵字：function
+        function add() {
+            // 函數體
+            console.log('my first function');
+        }
+
+        // 函數的調用語句
+        add(); 
+        // add可以在function前也可以在後
+
+
+
+        // 第二：帶函數的參數
+        // 定義一個函數,實現求兩個數的乘積
+        function mult (a,b) {   //a,b 稱為形式上的參數
+            // a * b;
+            console.log(a * b);
+            return a * b;  // 把a和b的相乘 = 結果返回到函數調用者的地方
+        }
+        
+        // 函數返回的結果：直接賦值給了變量t
+        // 2,4 是實際傳遞的參數
+        var t = mult(2, 4);  // 執行mult參數, 給函數體傳遞2和4兩個參數
+        console.log('t = '+ t);
+
+    </script>
+</body>
+</html>
