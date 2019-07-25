@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info">my words</div>
+<table class="my-table" border="1">
+    <tr>
+        <td class="my">1</td>
+        <td>2</td>
+        <td id="my-id">3</td>
+    </tr>
+    <tr>
+        <td class="my">4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+
+<table class="my-table" border="1">
+    <tr>
+        <td class="my">11</td>
+        <td>12</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td class="my">14</td>
+        <td>15</td>
+        <td>16</td>
+    </tr>
+</table>
+
+
+
+
+<script>
+    let info = document.getElementById('info');
+    info.innerHTML = '<h2>Hello~</h2>';
+    // info.innerText = '<h2>Hello~</h2>';
+
+
+    let a = 10;
+    let b = a;
+    b = 5;
+
+    let trytry = info;
+    trytry.innerHTML = 'Yessss';
+
+
+    // document.querySelector()
+    // document.querySelectorAll()
+
+    // let info2 = document.querySelector('#info');
+
+
+
+    let table2 = document.querySelectorAll('.my-table')[1];
+    table2.querySelector('.my').innerHTML = '<h2>table2</h2>';
+
+
+
+    let my_el = document.querySelector('#my-id');
+    my_el.closest('.my-table').style.backgroundColor = 'red';
+    // closest會找離他最近的
+</script>
+</body>
+</html>

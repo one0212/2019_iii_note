@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+
+    <script>
+        // 運算子: && = and , || = or
+        let a = 7 && 9;
+        let b = 7 || 9;
+        let info = document.querySelector('#info');
+
+        info.innerHTML += a + '<br>';
+        // 印出9,因為9才會決定是true or false
+
+        info.innerHTML += b + '<br>';
+        // 印出7,因為7就決定是true
+
+        let c = (b = 12) || (a = 20);
+        info.innerHTML += `a, b, c: ${a}, ${b}, ${c} <br>`;
+        // b=12 true,賦值12給 c, 結果已為true, a則不執行,繼承上面的9
+        // a=9 b=12 c=12
+
+        c = (b = 12) && (a = 20);
+        info.innerHTML += `a, b, c: ${a}, ${b}, ${c} <br>`;
+        // 等號優先權最低,會先執行括號內 b=12 true, a=20 true , a 再賦值給 c 
+        // a=20 b=12 c=20
+
+    </script>
+</body>
+</html>
