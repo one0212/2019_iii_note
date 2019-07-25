@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>計算1~n的和</title>
+</head>
+<body>
+    <script>
+        // 計算1到n的和
+        function sum(n) {
+            // 如果使用者傳來的數據不是數字類型,則返回NaN
+            // 如果使用者傳來的數據不是大於1的數字,返回0
+            if (typeof (n) != 'number') {
+                return NaN; // 直接返回NaN,如果函數中執行遇到了return語句,函數立即結束
+            }
+
+            if (n < 1) {
+                return 0;
+            }
+
+            // 大於1的狀況下
+            var i = 1, result = 0;
+            while(i <= n) {
+                result += i;
+                i++;
+            }
+            return result; // 把計算的和返回
+        }
+
+        var t = sum; // 宣告變數t 值為sum,型別為function
+        var tCallSum = sum(7);  // 宣告變數tCallSum 值為sum執行後的結果,型別為number
+        console.log(tCallSum); // 印出1+2+3...+7
+    </script>
+</body>
+</html>
