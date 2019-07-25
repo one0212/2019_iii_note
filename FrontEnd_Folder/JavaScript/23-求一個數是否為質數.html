@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求一個數是否為質數</title>
+</head>
+<body>
+    <script>
+        var num = 751; // 判斷num是否為質數
+        for (var i = 2; i < num; i++) { 
+            // 若為質數表示只能被1跟自己整除,i應該要 == num才會為true,此時for循環就會結束
+            if (num % i == 0) {
+                console.log('不是質數');
+                break; // 已經判斷出來不是質數,後續的循環就不需要執行了
+            }
+        } // for循環結束如果數字是質數的話沒有後續的console.log
+        
+        if ( i == num) { // 表示i只能被1跟自己整除
+            console.log('是質數');
+        }
+    </script>
+</body>
+</html>

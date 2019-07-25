@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>column</title>
+    <style>
+        .wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            column-count: 3;
+            /* 切欄數 */
+            /* column-gap: 20px; */
+            /* 欄間距 */
+            /* column-width:30px; */
+            /* 欄寬 */
+            height: 40vh;
+            text-align: justify;
+            column-fill: auto;
+            /* auto會依照vh高度換行
+            balance內容平均分布區塊內*/
+            column-rule: 4px dotted #bbb;
+            /* 分隔欄位的線用法同border */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p>CSS不能單獨使用，必須與HTML或XML一起協同工作，為HTML或XML起裝飾作用。本文主要介紹用於裝飾HTML網頁的CSS技術。其中HTML負責確定網頁中有哪些內容，CSS確定以何種外觀(大小、粗細、顏色、對齊和位置)展現這些元素。CSS可以用於設定頁面布局、設定頁面元素樣式、設定適用於所有網頁的全域樣式。CSS可以零散地直接添加在要應用樣式的網頁元素上，也可以集中化內建於網頁、連結式引入網頁以及匯入式引入網頁。</p>
+        <p>CSS最重要的目標是將檔案的內容與它的顯示分隔開來。在CSS出現前，幾乎所有的HTML檔案內都包含檔案顯示的資訊，比如字型的顏色、背景應該是怎樣的、如何排列、邊緣、連線等等都必須一一在HTML檔案內列出，有時重複列出。CSS使作者可以將這些資訊中的大部分隔離出來，簡化HTML檔案，這些資訊被放在一個輔助的，用CSS語言寫的檔案中。HTML檔案中只包含結構和內容的資訊</p>
+        <p>CSS樣式資訊可以包含在一個附件中或包含在HTML檔案內。讀者可以使用多個樣式表，在重複的情況下他可以選擇其中之一。不同的媒體可以使用不同的樣式表。比如一個檔案在螢光屏上的顯示可以與在印表機中列印出來的顯示不同。這樣作者可以為不同的媒體設計最佳的顯示方式。此外CSS的目標之一是讓讀者有更大的控制顯示的自由。假如一個讀者覺得斜體字的標題讀起來很困難，他可以使用自己的樣式表檔案，這個樣式表可以「層疊」使用，他可以只改變紅色斜體字這個樣式而保留所有其他的樣式。</p>
+    </div>
+</body>
+</html>

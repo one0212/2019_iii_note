@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calc()</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .wrapper {
+            max-width: 960px;
+            height: calc(100vh - 58px);
+            /* 58px為footer的高度 */
+        }
+
+        .box {
+            width: calc(25% - 60px);
+            /*60 = mg20+pd40*/
+            /* 如果原25%再加上20px就會爆版,calc可以修正並加減絕對單位.相對單位 */
+            margin: 0 10px 10px;
+            padding: 20px;
+            background: #fff;
+            float: left;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        footer {
+            background: #bbb;
+            padding: 20px 0;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            1
+        </div>
+        <div class="box">
+            2
+        </div>
+        <div class="box">
+            3
+        </div>
+        <div class="box">
+            4
+        </div>
+        <div class="box">
+            5
+        </div>
+        <div class="clear"></div>
+       
+
+    </div>
+    <footer>
+            i'm footer
+        </footer>
+</body>
+
+</html>

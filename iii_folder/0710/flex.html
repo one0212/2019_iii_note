@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex box</title>
+    <style>
+        .wrapper {
+            max-width: 960px;
+            /* height: 600px; */
+            background: #888;
+            margin: 0 auto;
+            /* display: flex; */
+        }
+
+        .flex {
+            background: pink;
+            height: 800px;
+            display:flex;
+            /* display: inline-flex */
+            /* inline-flex會使寬度內層元素容器寬度改變 */
+            flex-direction: row;
+            /* row-reverse讓內層元素反方向排列 */
+            /* row:defult */
+            /* column */
+            justify-content: center;
+            /* flex-start:defult */
+            /* space-evebly */
+            /* align-items:center; */
+            /* stretch:defult */
+            /* flex-wrap: wrap; */
+            /* 使內容換行 */
+            align-content:center;
+            /* flex-flow: row wrap; */
+            /* 將flex-direction與flex-wrap合併一起寫 */
+
+        }
+
+        .box {
+            width: 240px;
+            /* height: 120px; */
+            margin: 10px;
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* defult為1,如果設置為0就會爆版;  當內容物超過容器時,flex-shrink會自動生效且defult為1 */
+            
+        }
+
+        .box1 {
+            /* width: 240px; */
+            /* = flex-basis:240px */
+            /* flex-grow:1; */
+            /* 會分配剩餘的空間 */
+            /* flex: 0 1 240px; */
+            /* 合寫:flex-grow | flex-shrink | flex-basis */
+            align-self:flex-start;
+            /* 單一自己做設定 */
+        }
+
+        .box2 {
+            /* flex-grow:8; */
+            /* box2會分配到的剩餘空間為九分之八(grow總數相加分之幾) */
+            order:-1;
+        }
+
+        .box3 {
+            order: 1;
+            /* order會使順序往後開始重新排列,再依order數值大小排序,數值可正可負 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="flex">
+            <div class="box box1">1</div>
+            <span class="box box2">2</span>
+            <div class="box box3">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </div>
+</body>
+
+</html>

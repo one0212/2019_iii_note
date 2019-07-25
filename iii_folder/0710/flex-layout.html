@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex-layout</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        body {
+            background: #ddd;
+        }
+
+        a, a:link {
+            color: #3c5a9c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .main_header {
+            background: #fff;
+            padding: 10px 0;
+        }
+
+        .wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 48px;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+
+
+        .main_header .d-flex {
+            justify-content: space-between;
+        }
+
+        .main_menu {
+            background: #3c5a9c;
+            margin-bottom: 10px;
+
+        }
+
+        .main_menu ul {
+            padding: 0;
+        }
+
+        .main_menu li {
+            list-style: none;
+            /* flex-grow: 1; */
+            position: relative;
+        }
+
+        .main_menu a {
+            color: #fff;
+            padding: 15px 20px;
+            /* 加在a身上感應區塊會比li身上大 */
+            display: block;
+        }
+
+        .main_menu a:hover, .main_menu li.active a{
+            text-decoration: none;
+            background: #355089;
+        }
+
+        .submenu {
+            position: absolute;
+            /* absolute沒有賦值的話會留在原地 */
+            background: #3c5a9c;
+            /* display:none; */
+            /* 隱藏下拉式選單 */
+            opacity: 0;
+            transition: .5s;
+            max-height: 0;
+            /* 設置height會沒有彈性所以用max-height */
+            overflow: hidden;
+            width: 100%;
+            /* 解決缺角問題 */
+        }
+
+        .main_menu li:hover .submenu {
+            /* hover在li身上 */
+            /* display:block; */
+            opacity: 1;
+            max-height: 200px;
+
+        }
+
+        .profile_picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .object_cover {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            background: #fff;
+            border:1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .content {
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        .r_aside {
+            width: 180px;
+            align-self: flex-end;
+        }
+
+        .r_aside img, article img {
+            max-width: 100%;
+            /* 避免因圖片破版 */
+        }
+
+        .user_menu {
+            padding: 0;
+        }
+
+        .user_menu li {
+            list-style: none;
+        }
+
+        .user_menu li a {
+            display: block;
+            padding: 10px 20px;
+            border-left:4px solid transparent;
+            /* 就不會有bug問題 */
+        }
+
+        .user_menu li a:hover, .user_menu li.active a {
+            /* .user_menu li.active a 使其固定住選單 */
+            text-decoration: none;
+            background: #eee;
+            border-left:4px solid #4267b2
+        }
+
+        .user_menu li.active a {
+            font-weight: bold; 
+        }
+
+        .content article {
+            min-height: 400px;
+            /* ??? */
+        }
+        footer {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="main_header">
+        <section class="wrapper d-flex">
+            <img class="logo" src="images/facebook.png" alt="">
+            <div>
+                <!-- 在此如果沒有用div包起來的話a也會享有space-between,兩個a標籤會分開 -->
+                <a href="">Log In</a> | <a href="">Sign Up</a>
+            </div>
+        </section>
+    </header>
+
+    <nav class="main_menu">
+        <ul class="wrapper d-flex">
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="">Product</a>
+                <ul class="submenu">
+                    <li><a href="">shirts</a></li>
+                    <li><a href="">pants</a></li>
+                    <li><a href="">shoes</a></li>
+                </ul>
+            </li>
+            <li><a href="">Story</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+    </nav>
+    <section class="wrapper d-flex">
+        <aside>
+            <figure class="profile_picture">
+                <img class="object_cover" src="images/logo.jpg" alt="">
+            </figure>
+            <nav>
+                <ul class="user_menu">
+                    <li class="active"><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Album</a></li>
+                    <li><a href="">Videos</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="card">
+                <h1>Facebook</h1>
+                <time>2019/07/10 15:00</time>
+                <article>
+                    <p>this is article</p>
+                </article>
+            </div>
+        </main>
+        <aside class="r_aside">
+            <img src="images/jk.png" alt="">
+        </aside>
+    </section>
+    <footer>
+        copyright by facebook
+    </footer>
+</body>
+
+</html>
