@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函數練習</title>
+</head>
+
+<body>
+    <script>
+        // 給一個數字,返回相對應的星期
+        // 2:星期二 'sss' 不是正確的格式
+        // getWeekName(3)
+
+        function getWeekName(n) {
+            // 第一步:判斷數字類型
+            if (typeof(n) != 'number' || n > 7 || n < 1) {
+                return '不是正常的日期格式';
+            }
+        
+            var t = "";
+            // 第二步: 根據n返回對應星期
+            switch(n) {
+                case 1:
+                    t = '星期一';
+                    break;
+                case 2:
+                    t = '星期二';
+                    break;
+                case 3:
+                    t = '星期三';
+                    break;
+                case 4:
+                    t = '星期四';
+                    break;
+                case 5:
+                    t = '星期五';
+                    break;
+                case 6:
+                    t = '星期六';
+                    break;
+                default:
+                    t = '星期天';
+            
+            }
+
+            return t;
+        }
+
+        console.log(getWeekName(4));
+        console.log(getWeekName(''));
+        console.log(getWeekName(null));
+        console.log(getWeekName(undefined));
+        console.log(getWeekName(7));
+    </script>
+</body>
+
+</html>
