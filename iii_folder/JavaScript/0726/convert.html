@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>convert</title>
+</head>
+<body>
+    <input type="text" id="my_in">
+    <button onclick="doConvert()">Convert</button>
+    <!-- ()表呼叫以下函數 -->
+    <div id="my_out"></div>
+
+    <script>
+        let my_in = document.querySelector('#my_in'),
+            my_out = document.querySelector('#my_out');
+            // 合併宣告: 中間用逗號隔開
+
+        function doConvert() {
+            // console.log(my_in.value);
+            // my_out.innerHTML = my_in.value;
+           
+            my_out.innerHTML = parseInt(my_in.value, 16);
+            //.value 為input的屬性
+            // 16為16進制
+        }
+    </script>
+</body>
+</html>

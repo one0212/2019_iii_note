@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>string</title>
+</head>
+<body>
+    <div id="my_out"></div>
+
+    <script>
+        let my_out = document.querySelector('#my_out');
+        let str = "今年季後的NBA自由球員動向大致上塵埃落定，不過仍有幾名出色的球員仍在等待下家";
+
+        function showLine(s) {
+            my_out.innerHTML += s + '<br>';
+        }
+
+        showLine( str.charAt(2) ); // 索引值從0開始, a=0 b=1 c=2,故印出c
+        showLine( str[4] ); // []效果同等於 .charAt()
+        showLine( str.charCodeAt(3) ); // c會依據字碼排序顯示
+        showLine( str.length); // 字串長度
+        showLine( str.indexOf('自由') ); // 自由為第八個位置
+        showLine( str.indexOf('自由', 9) ); // 從第九個位置找第八個位置會找不到,顯示-1
+        showLine( str.indexOf('今年') ); // 0為第一個位置
+        showLine( str.lastIndexOf('自由') ); // 尋找方向為由後往前,但位置順序仍不變
+        showLine( '自由 indexOf: ' + str.indexOf('自由') );
+        showLine( '自由 indexOf, 5: ' + str.indexOf('自由' , 5) );
+        showLine( '自由 indexOf, 5: ' + str.indexOf('自由' , 12) ); // 自由位置在8,所以從12開始找會找不到,則顯示-1
+        showLine( '自由 lastIndexOf: ' + str.indexOf('自由') );
+
+
+    </script>
+</body>
+</html>

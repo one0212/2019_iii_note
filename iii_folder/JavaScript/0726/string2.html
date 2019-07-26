@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String2</title>
+</head>
+<body>
+        <div id="my_out"></div>
+
+        <script>
+            let my_out = document.querySelector('#my_out');
+            let str = "今年季後的NBA自由球員動向大致上塵埃落定，不過仍有幾名出色的球員仍在等待下家";
+    
+            function showLine(s) {
+                my_out.innerHTML += s + '<br>';
+            }
+
+            showLine( str.length); // 字串長度,字元數量
+            showLine( str.slice(2, 6) ); // 字串顯示2-5的位置
+            showLine( str );
+            showLine( str.slice() ); // 一樣顯示從頭到尾
+            showLine( str.slice(6, 30) ); // 只顯示6-29位置
+            showLine( str.slice(37) ); //顯示37到最後面的文字
+            showLine( str.split('球員')); //會將字串中有球員的字切割掉,中間用逗號隔開
+            showLine( str.split('球員').join('') );  // join會將切割過的__串接成陣列
+            showLine( str.split('球員').join('老闆娘') ); // 以join內容直接取代球員 join會取代spilt
+
+
+
+        </script>
+</body>
+</html>
