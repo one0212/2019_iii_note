@@ -23,19 +23,25 @@
     <br>
     <button onclick="doTest()">測試</button>
 
-    <div id="my_out"></div>
+    <div id="my_out"><img class="img" src="" alt=""></div>
+    
 
     <script>
         let my_out = document.querySelector('#my_out');
+        let img = document.querySelector('.img');
         
         function doTest() {
             let age = parseInt(document.querySelector('#age').value );
             let gender = document.querySelector('#gender').value ; // gender就不需要再將它變成整數
 
+            console.log(`gender ${gender} age ${age}`)
             if ( gender === 'female' && age >= 20) {
-                my_out.innerHTML = "Welcome"
+                my_out.innerHTML = '<img src="images/food.jpeg">';
             } else {
-                my_out.innerHTML = "886";
+                img.setAttribute('src', 'images/cake.jpeg');
+                console.log(img)
+                // my_out.innerHTML = '<img src="images/cake.jpeg">';
+                // img.src = '<img src="images/CAKE.jpeg">'; // + new Date().getTime()
             }
         }    
         
