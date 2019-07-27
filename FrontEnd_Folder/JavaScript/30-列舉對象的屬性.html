@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列舉對象的屬性</title>
+</head>
+<body>
+    <script>
+        var obj = {};
+
+        obj.name = 'jason';
+        obj.age = 19;
+        obj.run = function() {
+            console.log('ss');
+        }
+
+        for (var attrName in obj) {
+            // 變量 attrName 為當前屬性的名字
+            // 第一圈迴圈，attrName=obj的第一個屬性名 name
+            // 第二圈迴圈，attrName=obj的第二個屬性名 age
+            //  .....
+            // let attrValue = obj[attrName]
+            // console.log(`name: ${attrName} value: ${attrValue}`);
+
+            let attrValue = obj[attrName];
+            console.log('name: ' + attrName + ' value:'  + attrValue);
+
+            
+            if (typeof(attrValue) == 'number') {
+                console.log(attrValue);
+            }
+
+
+        }
+        
+    </script>
+</body>
+</html>

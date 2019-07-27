@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匿名函數</title>
+</head>
+<body>
+    <script>
+        // 匿名函數 沒有函數名
+        var f = function(a) {
+            return a * a;
+        }
+
+        console.log(typeof f); // => function
+        console.log(f(3)); // => 9
+        // 因為我們用var聲明的一個變量f 類型是function
+        // f 變量和其他變量一樣使用，可作為其他函數的參考使用
+
+        // 函數的聲明
+        function f2(a) {
+            return a * a * a;
+        }
+
+        console.log(typeof f2);
+        console.log(f2(9));
+
+
+        // 區別: 變量聲明的函數（匿名函數）不能進行函數提升
+
+
+        console.log(`===========var與let的差別===========`)
+        console.log(`for 執行之前 var i=${i}`)
+        for (var i = 0; i < 2; i++) {
+            console.log(`for 裡面的 var i=${i}`)
+        }
+        console.log(`for 結束後 var i=${i}`)
+
+
+        // 用var宣告i這個變數會使i一直存留在window
+        // 生命週期一直在script標籤中
+
+        console.log(`for 執行之前 let y=${y}`)
+        for (let y = 0; y < 2; y++) {
+            console.log(`for 裡面的 let y=${y}`)
+        }
+        console.log(`for 結束後 let y=${y}`)
+        
+    </script>
+    </html>
+</body>

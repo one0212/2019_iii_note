@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>創建對象</title>
+</head>
+<body>
+    <script>
+        // 創建Object對象的兩種方式
+
+        // 第一種：使用new操作符創建對象
+        var t = new Object();  // 創建一個Object對象t
+        // new: 創建一個對象, 然後對象執行Object函數, 最後返回一個實例（instance)
+        // js是一個動態語言, 可以隨時添加屬性和方法
+
+        t.age = 19;
+        t.name = 'jack';
+        t.run = function () {  // 匿名函數
+            console.log('奔跑的方法');
+        }
+
+
+        // 對象怎麼使用自己的屬性和方法？
+        // 1：使用.的方式
+        console.log(t.age);
+
+        // 2：使用[]方式
+        console.log(t['name']);
+
+
+        // 第二種：字面量的方式
+        // 也稱為使用json對象的方式
+        var i = {
+            age: 19,
+            name: 'oneone',
+            run: function() {
+                console.log('奔跑吧');
+            }
+        };
+
+        console.log(i.age);
+        i.age = 25; // 可以再賦值
+        console.log(i['age']);
+
+        i.run(); // 執行t對象中的run方法，如果一個對象的屬性是函數，就稱之為方法
+    </script>
+</body>
+</html> 

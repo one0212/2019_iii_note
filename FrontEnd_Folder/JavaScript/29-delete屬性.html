@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var t = {}; // t = new Object();
+        t.age = 19; // 添加一個屬性age
+        console.log(t.age);  // => 19
+
+        // 通過delete操作符 刪除屬性
+        delete t.age; // 篩除t的自定義age屬性
+        // 同等於 delete t['age'];
+
+        // !!!!   delete只能刪除自定義屬性 .age ['name'] 
+
+        console.log(t.age);
+        // 因已刪除delete屬性 故印出undefined
+
+
+        // 如何判斷屬性是否屬於自定義對象的屬性： 通過in運算符即可 會返回boolean
+        t.name = '123';
+        console.log('name' in t);  // true
+
+        delete t['name'];
+        console.log('name' in t);  // false
+        // 判斷name是否為t的屬性
+    </script>
+</body>
+</html>
