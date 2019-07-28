@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>數學對象封裝</title>
+</head>
+<body>
+    <script>
+        // 封裝一個數學對象，對象中包括：圓周率屬性 獲取1~n的和的方法 獲取n的階乘的方法
+        var myMath = {
+            PI: 3.1415926,
+            sum: function(n) {
+                // 實現1~n的和 
+                var result = 0;
+                for (var i = 1; i <= n; i++) {
+                    result += i;
+                }
+                return result;
+            },
+            factorial: function(n) {
+                // 求1~n的階乘
+                var result = 1;
+                for (var i = 1; i <= n; i++) {
+                    result *= i;
+                }
+                return result;
+            }
+        };
+
+        console.log(myMath.PI);
+        console.log(myMath.sum(100));
+        console.log(myMath.factorial(10));
+    </script>
+</body>
+</html>
