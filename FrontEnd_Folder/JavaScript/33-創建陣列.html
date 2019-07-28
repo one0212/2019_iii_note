@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>創建陣列</title>
+</head>
+<body>
+    <script>
+        var arr = new Array(); // 創建一個空陣列類型：[]
+        arr[0] = 1; // length = 1
+        arr[1] = 2; // length = 2
+        arr[3] = 'sss'; // length = 3
+        // length 會自動增加
+
+        console.log(arr);
+        console.log('length = ' + arr.length);
+
+
+        // 構造函數創建陣列傳遞參數--------少用 
+        var arr2 = new Array(4); // 給構造函數傳遞數值 類型, 預設length為4, 但長度是可以變的
+
+        arr2[0] = 'ssss';
+        arr2[1] = 0; 
+        arr2[2] = 0; 
+        arr2[3] = 0; 
+        arr2[4] = 0; 
+        arr2[5] = 0; 
+        console.log(arr2);
+        // 此時length就會改變為6
+
+
+        // 創建陣列的時候 順便進行初始化的內容
+        var arr3 = new Array(1,2,3,'sss','haha',true,[22,33]);
+        console.log(arr3); //length = 7
+
+        // 如果length值變小, 相當於截斷陣列 --- 盡量不要這麼用～～
+        arr3.length = 2;
+        console.log(arr3); // => [1,2]
+    </script>
+</body>
+</html>

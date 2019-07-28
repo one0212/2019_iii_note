@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>遍歷數組</title>
+</head>
+
+<body>
+    <script>
+        Object.prototype.name = "fatDog";
+        // 為了使a繼承非原型的屬性
+
+
+
+        // 如果是連續陣列，可以使用length代表陣列中的元素個數
+        var a = [1, 2, 3, 89, 'sd', true];  // length = 6;
+        console.log('length: ' + a.length);
+
+        // 輸出陣列中所有的元素
+        for (var i = 0; i < a.length; i++) {
+            console.log(a[i]);
+        }
+
+        // 另外可以用for in 的方式遍歷數據 也可以把繼承自原型屬性進行遍歷
+        // for in 遍歷對象，拿到的是對象的屬性名，而不是對象的屬性值
+        for (var k in a) {  // for in 遍歷數組，k值是數組的索引編號, 不是數組的元素值
+            console.log(a[k]); // k是索引編號不是數組的元素值
+        }
+
+
+
+        console.log('自己原型的屬性')
+        for (var tt in a) {
+            if (a.hasOwnProperty(tt)) {
+                console.log(tt); 
+            } else {
+                console.log('繼承爸爸的屬性')
+                console.log(tt)
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

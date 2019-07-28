@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>檢測合法值陣列案例</title>
+</head>
+
+<body>
+    <script>
+        // 案例：一個陣列, 合法值為1,2或3, 其餘為不合法, 統計合法及不合法個數
+        var t = [1, 4, 9, 'sss', 3, '2', 3, 2, 1];
+        var rightNum = 0, // 合法的個數
+            illNum = 0; //  非法的個數
+
+        // 第一種：遍歷陣列中的每個元素, 判斷是否是合法, 如果合法給rightNum += 1
+        // for (var i = 0; i < t.length; i++) {
+        //     if(t[i] === 1 || t[i] === 2 || t[i] === 3) {
+        //         rightNum += 1;
+        //     } else {   // else可以不用輸出 =>方法2
+        //         illNum += 1;
+        //     }
+        // }
+        // console.log('合法: ' + rightNum);
+        // console.log('非法: ' + illNum);
+
+
+
+        // 第二種：只求rightNum, illNum再用 length - rightNum
+        // for (var i = 0; i < t.length; i++) {
+        //     if(t[i] === 1 || t[i] === 2 || t[i] === 3) {
+        //         rightNum += 1;
+        //     } 
+        // }
+        // illNum = t.length - rightNum;  // 陣列的總長度-合法的就剩下不合法的
+
+        // console.log('合法: ' + rightNum);
+        // console.log('非法: ' + illNum);
+
+
+
+        // 第三種：for in
+        // for (var k in t) {
+        //     switch (t[k]) {
+        //         case 1:
+        //             rightNum += 1;
+        //             break;
+        //         case 2:
+        //             rightNum += 1;
+        //             break;
+        //         case 3:
+        //             rightNum += 1
+        //             break;
+        //         default:
+        //             illNum += 1;
+        //     }
+        // }
+        // console.log('合法: ' + rightNum);
+        // console.log('非法: ' + illNum);
+
+        // switch優化版本
+        for (var k in t) {
+            switch (t[k]) {
+                case 1: 
+                case 2:
+                case 3:                //當case 1.2.3條件都相同時,可以寫一段代碼即可
+                    rightNum += 1
+                    break;
+                default:
+                    illNum += 1;
+            }
+        }
+        console.log('合法: ' + rightNum);
+        console.log('非法: ' + illNum);
+
+
+
+    </script>
+</body>
+
+</html>
