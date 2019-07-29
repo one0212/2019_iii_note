@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array的棧方法</title>
+</head>
+<body>
+    <script>
+
+        // 陣列可以透過push 和pop兩個方法形成棧的數據結構
+        let t = ['a', 'b', 'c', 'd', 'e', 'f'];
+        console.log(t.length);
+        console.log(t);
+        t.pop();
+
+        // pop(): 從陣列尾部彈出一個元素,並返回彈出的元素, length就會-1
+        // 尾部：索引最大的地方  
+        console.log(t.length);
+        console.log(t);
+        t.pop();
+        console.log(t.length);
+        console.log(t);
+        
+        
+        // push(): 從陣列尾部壓入一個元素，並返回新的長度
+        var r = t.push(3);
+        console.log(r);
+        console.log(t);
+
+
+    </script>
+</body>
+</html>

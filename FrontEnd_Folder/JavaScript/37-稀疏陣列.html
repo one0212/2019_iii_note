@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>稀疏陣列</title>
+</head>
+<body>
+    <script>   
+        var t = [1, 2];
+        // 索引值 0 1
+        t[100] = 'sss'; // 索引到了100  length = 101;
+        console.log(t);
+        console.log(t[10]); // undefined
+
+
+        // for in 循環會越過稀疏陣列的undefined空值
+        for (var k in t) {
+            console.log(t[k]);
+        }
+
+
+    // 1.length和陣列的元素的個數不一定相等
+    // 2.陣列不一定是連續的
+    // 3.使用for in循環可以對稀疏陣列的空值undefined進行過濾
+    // 4.稀疏陣列盡量不要用
+
+    </script>
+</body>
+</html>

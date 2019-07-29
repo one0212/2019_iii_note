@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隊列的數據結構</title>
+</head>
+<body>
+    <script>
+        // 用陣列模擬隊列數據結構
+        var t = [];
+        // 往隊列裡依序放入1, 2, 3三個元素
+        
+        t.push(1);
+        t.push(2);
+        t.push(3);
+        console.log(t);
+
+        // 出對一個元素 1
+        console.log(t.shift());
+        console.log(t);
+
+        // 出對一個元素 2
+        console.log(t.shift());
+        console.log(t);
+
+        // 隊列的特點就是先進先出 ==> shift()
+        // push() 與 shift() 互相配合
+    </script>
+</body>
+</html>
