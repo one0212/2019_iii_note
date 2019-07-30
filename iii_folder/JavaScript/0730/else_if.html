@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if迴圈</title>
+</head>
+
+<body>
+
+
+    <label for="score">分數</label>
+    <input type="number" id="score" value="50" onkeyup="doTest()" onchange="doTest()">
+    <!-- 50則為預設值 -->
+    <br>
+
+
+    <div id="my_out"></div>
+
+    <script>
+        let my_out = document.querySelector('#my_out');
+
+
+        function doTest() {
+            
+            let s = parseInt(document.querySelector('#score').value);
+            let grade = " ";
+
+            if (s >= 90) {
+                grade = "A";
+            } else if (s >= 80) {
+                grade = "B";
+            } else if (s >= 70) {
+                grade = "C";
+            } else if (s >= 60) {
+                grade = "D";
+            } else {
+                grade = "E";
+            }
+            my_out.innerHTML = grade;
+        }
+
+    </script>
+
+</body>
+
+</html>

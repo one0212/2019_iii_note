@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>creatElement</title>
+</head>
+<body>
+
+    <div class="my_out"></div>
+
+    <script>
+        let my_out = document.querySelector('.my_out')
+        let element = document.createElement('div')
+        //只有document可以createElement 
+
+        element.innerHTML = `<h2>Hello</h2>`
+        my_out.appendChild(element)
+        // 與createElement並用
+    </script>
+</body>
+</html>

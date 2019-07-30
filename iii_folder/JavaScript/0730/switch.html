@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>switch</title>
+</head>
+
+<body>
+
+
+    <label for="score">分數</label>
+    <input type="number" id="score" value="50" onkeyup="doTest()" onchange="doTest()">
+    <!-- 50則為預設值 -->
+    <br>
+
+
+    <div id="my_out"></div>
+
+    <script>
+        let my_out = document.querySelector('#my_out');
+
+
+        function doTest() {
+            let s = parseInt(document.querySelector('#score').value);
+            s = parseInt (s / 10);
+            let g = " ";
+
+            switch(s) {
+                case 10:
+                case 9:
+                    g = "A";
+                    break;
+                case 8:
+                    g = "B";
+                    break;
+                case 7:
+                    g = "C";
+                    break;
+                case 6:
+                    g = "D";
+                    break;
+                default:
+                    g = "E";
+            }
+
+            my_out.innerHTML = g;
+        }
+
+    </script>
+
+</body>
+
+</html>
