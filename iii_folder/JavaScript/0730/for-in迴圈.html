@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for in迴圈</title>
+</head>
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+
+        let s;
+        const person = {
+            name: 'Peter',
+            age: 40,
+            gender: 'male',
+        }
+
+        for (s in person) {
+            rect.innerHTML += `s:${s}, person[s]:${person[s]}<br>`
+            console.log(person[s])
+        }
+
+
+        // 第二種
+        let {name, age, gender} = person // ES6
+        // 設置屬性名為變數
+        console.log(name, age, gender);
+
+
+
+        // 第三種
+        name = "Bill";
+        age = 22;
+
+        const p2 = {name, age};  // ES6
+        console.log(p2);
+
+
+
+        // 傳統寫法
+        const p3 = {name:name, age:age}
+        // 前面的name為屬姓名 後面為屬性值
+        console.log(p3);
+
+
+    </script>
+
+</body>
+</html>

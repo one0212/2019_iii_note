@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>balls</title>
+    <title>object-align</title>
     <style>
         #rect {
             position: relative;
             width: 800px;
-            height: 600px;
+            height: 800px;
             background: lightblue;
-           
+
         }
+
         .ball {
             position: absolute;
             width: 40px;
             height: 40px;
-            border:2px solid #000;
-            background-color:lightsalmon;
-            color:#fff;
+            border: 2px solid #000;
+            background-color: lightsalmon;
+            color: #fff;
             line-height: 40px;
-            text-align:center;
-            border-radius:50%;
-            
+            text-align: center;
+            border-radius: 50%;
+
         }
     </style>
 </head>
+
 <body>
     <div id="rect">
         <!-- <div class="ball">88</div> -->
@@ -34,20 +37,30 @@
 
     <script>
         let rect = document.querySelector('#rect');
-        let b, i;
+        let b, i, k;
 
-        for (i = 0; i < 30; i++) {
+        for (i = 0; i < 20; i++) {
+            x = i % 4;
+            y = parseInt(i / 4);
+            console.log(`x:${x}, y:${y}`)
+
+
             b = document.createElement('div');
             b.className = 'ball';
             b.innerHTML = i + 1;
-            b.style.left = i * 10 + 'px';
-            b.style.top = i * 20 + 'px';
+            b.style.left = x * 50 + 'px';
+            b.style.top = y * 50 + 'px';
             // b.style.width = i * 8 + 'px';
             // b.style.height = i * 8 + 'px';
-            b.style.backgroundColor = `rgb(${i*8},100,${i*7})`;
-            
-            rect.appendChild(b)
+            b.style.backgroundColor = `rgb(${i * 17},${k * 17},0)`;
+
+            rect.appendChild(b);
+
+
         }
+        
+               
     </script>
 </body>
+
 </html>
