@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>陣列轉成字串</title>
+</head>
+<body>
+    <script>
+        let t = [1, 2, 3];
+        // toString方法會把陣列轉成字串,重寫了原型的方法
+        // 把陣列中的元素都轉成字串然後用逗號分隔不同元素
+        console.log(t.toString());
+         
+        //  join方法也可以將陣列轉成字串，預設跟toString一樣
+        console.log(t.join());
+
+        // join方法可以傳一個參數, 用來分隔陣列中的元素
+        console.log(t.join('__'));
+        console.log(t.join('/'))
+
+    </script>
+</body>
+</html>

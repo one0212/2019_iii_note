@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>陣列切片方法</title>
+</head>
+<body>
+    <script>
+        let y = [0, 1, 2, 3, 4, 5];
+        console.log("y: " + y);
+
+        // slice：複製陣列的一部份
+        // 傳一個參數的時候, 是從參數的索引位置開始擷取到陣列的最後
+        let a1 = y.slice(2);
+        console.log("a1: " + a1);
+
+
+        // 傳兩個參數：從第一個參數作為索引位置開始,到第二個參數作為索引前面的那個元素結束, 擷取陣列切片, 但對原陣列沒有任何影響
+        let a2 = y.slice(2,5); // => a2 = [2, 3, 4]
+        console.log(a2);
+        console.log(y); // [0, 1, 2, 3, 4, 5] 對原陣列沒有任何影響
+
+        // 如果傳遞的是負數, 就從陣列的結尾開始計算, ！！！盡量不要用
+        // slice方法只能往後擷取，如果往前的話會返回[]
+        let a3 = y.slice(-3, -1);
+        console.log(a3); // => [3, 4]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>splice</title>
+</head>
+<body>
+    <script>
+        let t = [0, 1, 2, 3, 4, 5];
+        // splice方法如果只有一個參數，就從這個參數刪除到陣列的結尾
+        // !!! 會對原陣列產生影響
+        // let a1 = t.splice(3); // t => [0, 1, 2]
+        // console.log(t);
+        // console.log(a1); // [3, 4, 5]
+
+        // 傳遞兩個參數, 第一個參數是要刪除的起始索引
+        // 第二個參數：要刪除元素的個數
+        // let a2 = t.splice(3,1); // t => [0,1,2,4,5]
+        // console.log(t);
+        // console.log(a2); // a2 => [3]
+
+
+        // 兩個以後的參數
+        // 第一個：start
+        // 第二個：刪除元素個數
+        // 第三個～後面：要插入到start所以位置的元素
+        // let a3 = t.splice(3,2,'sss','vrs','yyy');
+        // console.log(a3); // [3,4]
+        // console.log(t); // [0,1,2,'sss','vrs','yyy']
+
+        // splice的應用：給陣列任意位置插入元素
+        // t.splice(3, 0, 'a');
+        // console.log(t);
+
+        // 替換陣列中的3為'a'
+        t.splice(3, 1, 'a');
+        console.log(t);
+
+
+
+
+    </script>
+</body>
+</html>

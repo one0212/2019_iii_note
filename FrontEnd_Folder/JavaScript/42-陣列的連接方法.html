@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>陣列的鏈接方法</title>
+</head>
+<body>
+    <script>
+        let t = [1, 2, 3];
+        console.log(t);
+
+        // 調用陣列的鏈接方法, 不會影響原來的陣列, 函數會返回一個新的拼接陣列
+        let newArr = t.concat('ss', true, 222);
+        console.log(t); // => [1, 2, 3]
+        console.log(newArr);
+
+        let newArr2 = t.concat(['哈哈', '台北', 980]);
+        console.log(newArr2);
+    </script>
+</body>
+</html>

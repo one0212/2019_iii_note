@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>陣列反序</title>
+</head>
+<body>
+    <script>
+        let t = [90, 8, 34, 2, 56, 79, 88, 21];
+        console.log(t);
+        console.log(t.length);
+        // 第一種方法: JS的自訂方法 reverse
+        // t.reverse();
+        // console.log(t);
+
+        // 第二種方法：建立一個新陣列, 逆序之間存放原陣列的數據內容
+        let arr = new Array(t.length);
+        console.log(arr)
+        for (let i = t.length - 1, k = 0; i >= 0; i--, k++) {
+            arr[k] = t[i];
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

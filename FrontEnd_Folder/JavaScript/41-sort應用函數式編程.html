@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sort應用</title>
+</head>
+<body>
+    <script>
+        // 此函數接受兩個參數，要求返回值為負數，0，正數。如果返回負數代表第一個參數小於第二個參數，0為相等，正數則大於
+
+        // 定義一個變量，變量的類型是function
+        var compareFun = function (a, b) {
+            return a - b; // a == b, a - b = 0, a < b, a - b = 負數
+        };
+        
+
+        var m = [ 4, 20, 10, 9, 35, 11];
+        console.log(m);
+        // 預設是轉成字串後比較大小
+        // m.sort();
+        // console.log(m);
+        
+        
+        // 利用函數式編程, sort方法可以接受一個比較大小的函數, 例如數值比較大小的方法進行排序
+        // m.sort(compareFun);
+        // console.log(m)
+
+        // 進一步優化, 由於匿名函數只使用一次, 沒有必要創建一個變量, 直接可以把匿名函數的表達式傳遞到sort函數裡去就可以
+        m.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(m)
+    </script>
+</body>
+</html>
