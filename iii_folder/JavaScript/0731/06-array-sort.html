@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array-sort</title>
+</head>
+<body>
+        <div id="rect"></div>
+
+
+        <script>
+            let rect = document.querySelector('#rect');
+            let str = "是一種由道格拉斯·克羅克福特構想和設計、輕量級的資";
+
+            let ar = str.split('');
+            let br = [12, 9, 32, 7, 5, 29];
+    
+           
+            rect.innerHTML = JSON.stringify(ar) + '<br>';
+
+            ar.sort() // 經排序後
+            rect.innerHTML += JSON.stringify(ar) + '<br>';
+            
+
+            rect.innerHTML += JSON.stringify(br) + '<br>';
+
+           
+            br.sort(function(a,b) {
+                return a - b
+                // a - b > 0 會使陣列排序由數自小到大
+            });
+
+            // 將function的參照丟給sort當參數
+            rect.innerHTML += JSON.stringify(br) + '<br>';
+
+            // 亂數排序
+            br.sort(function() {
+                return Math.random() - 0.5
+                // Math.random產生小於0.5的時候,-0.5會回傳false
+            });
+            rect.innerHTML += JSON.stringify(br) + '<br>';
+
+
+        </script>
+</body>
+</html>

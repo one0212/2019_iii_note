@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array-copy</title>
+</head>
+<body>
+    <div id="rect"></div>
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let ar = [1,6,9,10,[2,3,4]];
+
+        br = ar.slice(); // 單層複製
+        cr = JSON.parse(JSON.stringify(ar)) // 深層複製
+
+        ar[2] = 999;
+        ar[4][1] = 1000
+
+        rect.innerHTML = JSON.stringify(ar) + '<br>';
+        rect.innerHTML += JSON.stringify(br) + '<br>';
+        // br為單層的複製, 內層仍參照原本的值
+        rect.innerHTML += JSON.stringify(cr) + '<br>';
+        // cr為深層的複製, 內層也有複製到所以不會有異動
+    </script>
+</body>
+</html>

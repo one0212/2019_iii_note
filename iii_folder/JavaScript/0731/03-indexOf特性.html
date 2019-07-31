@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexOf</title>
+</head>
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        let rect = document.querySelector('#rect')
+        let s;
+        const person = {
+            name: 'Peter',
+            age: 40,
+            gender: 'male',
+        }
+
+        console.log('age' in person);  // 判斷'age'這個物件是否為person的屬性名
+        console.log('sex' in person);
+
+
+        const ar = [2, 5, 7, 8];
+
+        console.log('ar instanceof Array: ', ar instanceof Array); // 測試某個物件是不是屬於某個類型
+        console.log('ar instanceof Object: ', ar instanceof Object);
+        console.log('person instanceof Array: ', person instanceof Array);
+        console.log('person instanceof Object: ', person instanceof Object);
+
+
+        for (let i = 1; i < 10; i++) {
+            console.log(i, ar.indexOf(i)) ; // indexOf判斷陣列裡有沒有某種元素
+            // indexOf若沒有判斷到位置則返回-1, 有找到的話就返回索引值
+        }
+    </script>
+
+</body>
+</html>

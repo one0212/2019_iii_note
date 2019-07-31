@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>巢狀迴圈</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background: lightblue;
+
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            background-color: lightsalmon;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+        <!-- <div class="ball">88</div> -->
+    </div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i, k, n = 1;
+
+        for (k = 0; k < 16; k++) {
+        
+            for (i = 0; i < 16; i++) {
+                b = document.createElement('div');
+                b.className = 'ball';
+                b.innerHTML = n;
+                b.style.left = i * 50 + 'px';
+                b.style.top = k * 50 + 'px';
+                // b.style.width = i * 8 + 'px';
+                // b.style.height = i * 8 + 'px';
+                b.style.backgroundColor = `rgb(${i * 17},${k * 17},0)`;
+
+                rect.appendChild(b);
+                n++; // 球上的數字才會遞增
+                
+                // 怎麼讓#色碼印在球上
+            }
+        }
+
+        console.log('break')
+        // 直接結束迴圈
+        for (let i = 0; i < 10 ; i++) {
+            if (i === 7) {
+                break;
+            }
+            console.log(i)
+        }
+
+        console.log('continue')
+        // 跳過這一輪進行下一圈迴圈
+        for (let k = 0; k < 10; k++) {
+            if (k === 7) {
+                continue;
+            }
+            console.log(k)
+        }
+
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array-sort</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+
+
+        const ar = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+
+        let br = ar.slice();
+        rect.innerHTML = JSON.stringify(br.splice(2, 3)) + '<br>';
+        // 2為從哪個索引值執行 3為刪除幾個值
+        rect.innerHTML += JSON.stringify(br) + '<br>';
+        rect.innerHTML += '---------<br>'
+
+
+        br = ar.slice();
+        rect.innerHTML += JSON.stringify(br.splice(2, 0, 11, 22, 33)) + '<br>';
+        // 11,22,33 為新增這些值上去
+
+        // splice返回陣列, 沒有刪除一樣會返回空陣列
+        rect.innerHTML += JSON.stringify(br) + '<br>';
+        rect.innerHTML += '-----<br>';
+
+        br = ar.slice();
+        rect.innerHTML += JSON.stringify(br.splice(2, 3, 11, 22, 33)) + '<br>';
+        rect.innerHTML += JSON.stringify(br) + '<br>';
+        rect.innerHTML += '-----<br>';
+
+    </script>
+</body>
+
+</html>

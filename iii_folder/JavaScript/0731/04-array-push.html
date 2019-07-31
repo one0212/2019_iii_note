@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array-push</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+
+    <script>
+        let rect = document.querySelector('#rect')
+        let ar = [];
+
+
+        for (i = 0; i <= 10; i++) {
+            ar.push(i);
+        }
+
+        rect.innerHTML = JSON.stringify(ar) + '<br>'; // 先看回傳值的方法
+        rect.innerHTML += ar.length + '<br>';
+
+
+        rect.innerHTML += ar.pop() + '<br>';  // 會回傳 length
+        rect.innerHTML += JSON.stringify(ar) + '<br>'; // pop()從尾部彈出一個值
+
+
+        rect.innerHTML += ar.shift() + '<br>';  // shift()從頭部彈出一個值
+        rect.innerHTML += JSON.stringify(ar) + '<br>'; 
+        
+
+        rect.innerHTML += ar.unshift(7, 9) + '<br>';  // 回傳length
+        rect.innerHTML += JSON.stringify(ar) + '<br>'; 
+
+
+
+    </script>
+</body>
+
+</html>
