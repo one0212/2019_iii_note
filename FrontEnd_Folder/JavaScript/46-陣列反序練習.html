@@ -16,12 +16,28 @@
         // console.log(t);
 
         // 第二種方法：建立一個新陣列, 逆序之間存放原陣列的數據內容
-        let arr = new Array(t.length);
-        console.log(arr)
-        for (let i = t.length - 1, k = 0; i >= 0; i--, k++) {
-            arr[k] = t[i];
+        // let arr = new Array(t.length);
+        // console.log(arr)
+        // for (let i = t.length - 1, k = 0; i >= 0; i--, k++) {
+        //      // t.length -1為最後一個值
+        //     arr[k] = t[i];
+        // }
+
+        // for (let i = 0; i < t.length; i++) {
+        //     arr[t.length - i - 1] = t[i]; // 直接把原陣列中的數據賦值給新陣列對應位置個元素
+        //     // 需在 - i
+        // }
+        // console.log(arr);
+        
+        // 第三種方法：不增加陣列的狀況下修改 利用位置互換的方式
+        console.log(t);
+        for (let i = 0; i < t.length / 2; i++) {
+            // t.length / 2 為位置互換的次數
+            let change = t[i];
+            t[i] = t[t.length - 1 - i];
+            t[t.length - 1 - i] = change;
         }
-        console.log(arr);
+        console.log(t)
     </script>
 </body>
 </html>
