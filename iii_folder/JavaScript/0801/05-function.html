@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+
+    <script>
+
+        let rect = document.querySelector('#rect');
+        let a = 11;
+        var b = 22;
+
+        // n為形式參數
+        // 形式參數為區域變數
+
+        function fn(n) {
+            // let a = 1;
+            // var b = 2;   
+            return a + b + n;
+        }
+
+        // 在script標籤中宣告的變數為全域變數
+        // 在function中宣告的變數為區域變數
+        console.log(fn(7));
+        // 7為實際參數
+
+
+
+
+        function colorCode(r, g, b) {
+            let c = r * 256 * 256 + g * 256 + b;
+            c = c.toString(16);
+            return '#' + "000000".slice(c.length) + c ;
+
+        }
+
+        console.log(colorCode(0,255,0));
+
+
+        // ES6
+        function myFun2(a, ...b) {
+            console.log('a: ' + a);
+            console.log('b: ' + b);
+            console.log(b)
+        } 
+        myFun2(7, 9, 12);
+
+
+
+        function sum(...n) {
+            let s = 0;
+            n.forEach(function(v) {
+                s += v
+            });
+            return s;
+        }
+        console.log(sum(3, 6, 8, 9))
+
+    </script>
+
+</body>
+
+</html>

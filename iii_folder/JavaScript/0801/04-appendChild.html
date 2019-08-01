@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>appendChild</title>
+</head>
+
+<body>
+    <div class="container" style="background-color: aquamarine">
+        <div class="my">1</div>
+        <div class="my">2</div>
+        <div class="my">3</div>
+    </div>
+    <div class="container" style="background-color: #ff59c9">
+        <div class="my">4</div>
+        <div class="my">5</div>
+        <div class="my">6</div>
+    </div>
+
+    <script>
+        let t = document.querySelectorAll('.my')[2];
+
+        document.querySelectorAll('.container')[1].appendChild(t);
+        // 將3移動到6後面
+        // appendChild 不會建立element 所以物件的數量不會增加只會搬動
+
+    </script>
+</body>
+
+</html>

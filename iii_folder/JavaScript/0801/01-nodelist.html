@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>node-list</title>
+</head>
+<body>
+    <div id="rect">
+        <div class="my">1</div>
+        <div class="my">2</div>
+        <div class="my">3</div>
+        <div class="my">4</div>
+        <div class="my">5</div>
+        <div class="my">6</div>
+
+    </div>
+
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let mys = rect.querySelectorAll('.my'),  // 型別為NodeList
+            i,
+            ar = [];
+            // 要使順序顛到, 先建立一個array
+
+        console.log(mys)
+
+        for (i = 0; i < mys.length; i++) {
+            ar.push(mys[i]); // 將element的參照放入
+             console.log(mys[i]);
+        }
+
+       
+        ar.reverse();
+        console.log(ar);
+        // 實際上array有顛倒,但是只有array中的順序顛倒, 但與原來的nodelist沒有關係
+        // nodeList用querySelectAll找到節點而已
+        // nodeList沒有繼承array的方法, 所以沒有reverse
+
+
+        for (i = 0; i < ar.length; i++) {
+            rect.appendChild(ar[i]);
+            // 給他物件的參照, 先將element拿出來,再將element放進container, 會從後面放,所以就會造成顛倒
+        }
+
+        console.log(ar)
+
+        // 內容物一樣是DOM element 但外殼是array,所以可以用array的方法操作它
+        
+    </script>
+</body>
+</html>

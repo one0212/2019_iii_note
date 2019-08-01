@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>node-list</title>
+</head>
+<body>
+    <div id="rect">
+        <div class="my">1</div>
+        <div class="my">2</div>
+        <div class="my">3</div>
+        <div class="my">4</div>
+        <div class="my">5</div>
+        <div class="my">6</div>
+
+    </div>
+
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let mys = rect.querySelectorAll('.my'),
+            i,
+            ar = [];
+
+        console.log(mys)
+
+        for (i = 0; i < mys.length; i++) {
+            ar.push(mys[i]);
+        }
+
+        ar.forEach(function(el) {
+            el.innerHTML = el.innerText * el.innerText;
+            // innerText顯示為字串,字串相加會把兩字串串在一起
+            // innerText相乘, 會先把字串轉成數字
+        });
+       
+       [3, 6, 9, 11].forEach(function(v) {
+           console.log(v * v)
+       })
+    </script>
+</body>
+</html>
