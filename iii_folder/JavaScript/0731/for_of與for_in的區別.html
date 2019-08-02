@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ar = [23, 'abc', 77, -6];
+
+        for (let a of ar) {
+            console.log(a)
+        }
+        // for of 會直接拿到元素值,拿不到索引值
+
+
+        for (let b in ar) {
+            console.log(b)
+        }
+        // for in 會拿到索引值
+
+
+        const obj = {
+            name:'fifi',
+            age:19,
+            habit: 'sleep'
+        }
+
+        // for (let c of obj) {
+        //     console.log(c)
+        // }
+        // for of無法獲得object的值,只能作用在array
+
+        for (let d in obj) {
+            console.log(d)
+        }
+        // for in 取array會取到其屬性名
+
+        
+    </script>
+</body>
+</html>

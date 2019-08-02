@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lodash</title>
+    <script src="/lib/lodash.js"></script>
+</head>
+<body>
+        <div id="rect"></div>
+
+        <script>
+            'use strict';
+            let rect = document.querySelector('#rect');
+        
+            let a = [1, 2, 3];
+            let b = [1, 2, 3];
+            let c = [2, 3, 1];
+            let obj1 = {name:'bill'};
+            let obj2 = {"name":'bill'};
+        
+            rect.innerHTML += (a == b) + '<br>'; // 比較參照是否相同
+            rect.innerHTML += _.isEqual(a, b) + '<br>';
+            rect.innerHTML += _.isEqual(a, c) + '<br>';
+            rect.innerHTML += _.isEqual(obj1, obj2) + '<br>';
+        
+        </script>
+</body>
+</html>

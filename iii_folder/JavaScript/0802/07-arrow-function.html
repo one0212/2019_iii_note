@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arrow function</title>
+</head>
+
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+
+        const f = (() => {
+            let n = 3;
+            return (a, b) => {
+                // 用 => 取代function
+                n--;
+                if (n >= 0)
+                    return a * b;
+                else
+                    return '----';
+            };
+        })();
+
+        // 直接執行function
+        // 因為n--, 只執行三次, 所以後面的參數執行都只會返回---
+
+
+        rect.innerHTML += f(2, 3) + '<br>';
+        rect.innerHTML += f(4, 5) + '<br>';
+        rect.innerHTML += f(6, 7) + '<br>';
+        rect.innerHTML += f(8, 9) + '<br>';
+    </script>
+</body>
+
+</html>

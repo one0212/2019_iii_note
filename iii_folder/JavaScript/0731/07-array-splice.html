@@ -19,8 +19,9 @@
         const ar = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 
         let br = ar.slice();
+        // slice() 裡面沒有放參數, 相當於copy array
         rect.innerHTML = JSON.stringify(br.splice(2, 3)) + '<br>';
-        // 2為從哪個索引值執行 3為刪除幾個值
+        // 2為從哪個索引值執行 3為刪除幾個值,並接上後面的值 ----splice會回傳陣列
         rect.innerHTML += JSON.stringify(br) + '<br>';
         rect.innerHTML += '---------<br>'
 

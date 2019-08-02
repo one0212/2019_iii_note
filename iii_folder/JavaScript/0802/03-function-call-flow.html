@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function</title>
+</head>
+
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict';
+        // 嚴謹模式: 沒有宣告變數的時候會有錯誤訊息產生
+        let rect = document.querySelector('#rect');
+
+
+        // function呼叫順序
+        const a = function () {
+            rect.innerHTML += 'a begin<br>';
+            b();
+            rect.innerHTML += 'a end<br>';
+        };
+
+        const b = function () {
+            rect.innerHTML += 'b begin<br>';
+            c();
+            rect.innerHTML += 'b end<br>';
+        };
+
+        const c = function () {
+            rect.innerHTML += 'c begin<br>';
+            // ....
+            rect.innerHTML += 'c end<br>';
+        };
+
+        a();
+
+        // 遞迴:自己呼叫自己
+        // 如果可以用迴圈解決就不要用遞迴
+
+        // 求階層
+        const m = function (n) {
+            if (n <= 1)
+                return 1;
+            else
+                return n * m(n - 1);
+        };
+
+        rect.innerHTML += m(5);
+    </script>
+</body>
+
+</html>

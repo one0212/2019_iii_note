@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <button onclick="myClick()">click me</button>
+
+
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+
+        const myClick = function (a, b) {
+            console.log(this, a, b);
+        };
+
+
+        myClick(3, 4);
+        myClick.call(window, 10, 20);
+        myClick.call({}, 55, 66);
+            //console.log(this);
+
+    </script>
+</body>
+
+</html>

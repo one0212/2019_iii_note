@@ -29,7 +29,9 @@
            
             br.sort(function(a,b) {
                 return a - b
-                // a - b > 0 會使陣列排序由數自小到大
+                //若 compareFunction(a, b) 的回傳值小於 0，則會把 a 排在小於 b 之索引的位置
+                // 即 a 排在 b 前面。
+                // a = 9, b = 12 排放位置會交叉
             });
 
             // 將function的參照丟給sort當參數
