@@ -15,14 +15,17 @@
 
     <script>
         'use strict';
+        // 嚴格模式
         let rect = document.querySelector('#rect');
 
         const myClick = function (a, b) {
             console.log(this, a, b);
         };
+        
+        window.myClick = myClick;
+        // 嚴格模式不會把全域變數加入window屬性
 
-
-        myClick(3, 4);
+        window.myClick(3, 4);
         myClick.call(window, 10, 20);
         myClick.call({}, 55, 66);
             //console.log(this);

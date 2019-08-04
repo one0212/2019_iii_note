@@ -36,6 +36,18 @@
         };
 
         console.log(person.showMe());
-        </script>
+
+
+        var a = 1;
+        (function() {
+            var b = 2;
+            (function() {
+                var c = 3;
+                console.log('a = ', a);
+                console.log('b = ', b);
+                console.log('c = ', c);
+            })()
+        })()
+    </script>
 </body >
 </html >
