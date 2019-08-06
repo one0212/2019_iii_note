@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict'
+        let rect = document.querySelector('#rect');
+
+        // setTimeout：在多久時間後執行函式
+        setTimeout(function() {
+            rect.innerHTML += '1<br>';
+        }, 1000);
+        // 第一個參數為要執行的回呼函式
+        // 第二個參數為要隔多久時間, 單位為毫秒, 1000為一秒
+
+        setTimeout(function() {
+            rect.innerHTML += '2<br>';
+        }, 2000);
+
+        rect.innerHTML += '3<br>';
+
+
+        // clearTimeout用來取消～
+    </script>
+</body>
+</html>

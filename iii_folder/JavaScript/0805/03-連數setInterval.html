@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict'
+        let rect = document.querySelector('#rect');
+
+        // setInterval：每隔多少時間執行一次函式, 會一直重複觸發
+        // 缺點：程式碼有誤的話仍會繼續執行
+
+        let myCount = 0;
+        
+        const fn = function() {
+            myCount++;
+            //  每一次呼叫都要+1 
+            rect.innerHTML += myCount + '<br>';
+
+            if (myCount >= 10) {
+                // 數到10即要停止
+                clearInterval(intervalId);
+                // 清除interval
+            }
+        };
+        fn();
+        // 先呼叫一次一開始就會有 1輸出, 不會有秒差
+        let intervalId = setInterval(fn,1000)
+
+        // 第一個參數為要執行的回呼函式
+        // 第二個參數為要隔多久時間, 單位為毫秒, 1000為一秒
+
+
+    
+    
+    </script>
+</body>
+</html>

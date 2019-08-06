@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict'
+        let rect = document.querySelector('#rect');
+
+        
+        // 連數i 到10即停止
+        for (let i = 0; i < 10; i++) {
+            // 此為特殊情況, 使用let宣告相當於在此建立了10個區域變數
+            // 用var則不行
+            setTimeout(function() {
+                rect.innerHTML += i + '<br>'
+            }, 1000 * i)
+            // * i 表i＝多少則為幾秒鐘出現
+        }
+
+
+    
+    
+    </script>
+</body>
+</html>
