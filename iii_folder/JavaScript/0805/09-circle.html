@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>balls</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: lightblue;
+           
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border:2px solid #000;
+            background-color:lightsalmon;
+            color:#fff;
+            line-height: 40px;
+            text-align:center;
+            border-radius:50%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="rect">
+        <!-- <div class="ball">88</div> -->
+    </div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i, x, y;
+        let ballNum = 12; // 圓形的數量
+        let unitAng = Math.PI * 2 / ballNum; // 單位角度
+        // 弧度radian = 2PI    2PI / 12 為兩個圓中間的角度
+
+
+
+        for (i = 0; i < ballNum; i++) {
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.innerHTML = i + 1;
+            // x = 400 + Math.cos(unitAng * i - Math.PI/3) *250;
+            // y = 300 + Math.sin(unitAng * i - Math.PI/3) *250  //排時鐘面數字
+            // 設定圓心在哪裡 + Math.cos(unitAng * i - 往逆時針旋轉60度--PI=180度/3) *半徑
+            x = 400 + Math.cos(unitAng * i ) *250;
+            y = 300 + Math.sin(unitAng * i ) *250;
+            // 設定圓心在哪裡 + Math.cos(unitAng * i) *半徑
+            b.style.left = x + 'px';
+            b.style.top = y + 'px';
+            
+            
+            rect.appendChild(b);
+            console.log(b)
+  
+        }
+        
+        // let round = 1;
+        // const doRun = () => {
+        //     console.log(`=========== 第 ${round} 圈 開始執行 ===========`)
+        //     balls.forEach( (el) => {
+        //         console.log(`第 ${el.innerHTML} 顆球開始移動`)
+        //         // el為DOM element = b當初建立的內容
+        //         //  要讓球賽跑
+        //         let x = parseInt(el.style.left); //parseInt是因為拿到的後面會有單位(px)
+        //         console.log(`移動前的位置：${x}`)
+        //         // 先拿到el位置
+        //         x +=  parseInt(Math.random() * 4);
+        //         console.log(`移動後的位置：${x}`)
+        //         el.style.left = x + 'px';
+
+        //     })
+
+        //     if (round == 5) {
+        //         console.log(`跑完了`)
+        //         return;
+        //     } else {
+        //         round++;
+        //     }
+        //     setTimeout(doRun, 3 * 1000)
+            
+        //     // 人肉眼的視覺暫留大概一秒中更新33,1000/33得30
+        // }
+
+        // // doRun()
+    </script>
+</body>
+</html>

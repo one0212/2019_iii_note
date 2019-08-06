@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>balls</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: lightblue;
+
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            background-color: lightsalmon;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: .5s;
+        }
+
+        .big-ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #000;
+            background-color: rgb(182, 235, 58);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            left: 370px;
+            /*原為400 -30為求半徑*/
+            top: 270px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+        <div class="big-ball"></div>
+    </div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let bigBall = document.querySelector('.big-ball');
+        let b, s, x, y;
+        let ballNum = 12; // 圓形的數量
+        let unitAng = Math.PI * 2 / ballNum; // 單位角度
+        // 弧度radian = 2PI    2PI / 12 為兩個圓中間的角度
+        let ballData = [];
+        let menuIsOpened = false;
+
+
+
+        for (s = 0; s < ballNum; s++) {
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.innerHTML = s + 1;
+
+
+
+            // Math.floor 在正數之中，無條件捨去小數
+            x = 380 + Math.floor(Math.cos(unitAng * s) * 250); //原為400 -20為ball的半徑
+            y = 280 + Math.floor(Math.sin(unitAng * s) * 250);
+            // 設定圓心在哪裡 + Math.cos(unitAng * s) *半徑
+
+            b.style.left = '380px'; //原為400 -20為ball的半徑
+            b.style.top = '280px';
+
+            rect.appendChild(b);
+            ballData.push({
+                target: b,
+                closed: { x: 380, y: 280 },
+                opened: { x: x, y: y }
+            });
+
+
+        }
+        // rect.appendChild(bigBall); 與設定z-index是否相等
+
+        //  下面為在js設定事件處理器
+        bigBall.onclick = function () {
+            menuIsOpened = !menuIsOpened;
+            console.log(menuIsOpened);
+
+            let string = menuIsOpened ? 'opened' : 'closed';
+
+            ballData.forEach(function (obj, ind) {
+                // obj,ind為區域變數,每一圈forEach都會賦職給他們
+                setTimeout(() => {
+                    // onclick後從陣列拿出來設定
+                    let x, y;
+                    b = obj.target;
+                    b.style.left = obj[string].x + 'px';
+                    b.style.top = obj[string].y + 'px';
+                    // obj[string  ]為物件
+                }, 100 * ind);
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
