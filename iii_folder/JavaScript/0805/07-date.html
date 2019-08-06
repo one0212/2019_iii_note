@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="rect"></div>
+
+    <script>
+        'use strict'
+        let rect = document.querySelector('#rect');
+
+        const doRun = () => {
+            let s = (new Date()).toString();
+            rect.innerHTML = s.split(' ')[4];
+            // split切割完後會回傳陣列, [4]為其索引值
+
+            setTimeout(doRun, 1000);
+        };
+
+        doRun();
+
+
+    </script>
+</body>
+
+</html>

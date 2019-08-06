@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: rgb(238, 173, 132);
+        }
+
+        .head {
+            position: absolute;
+            left: 250px;
+            top: 250px;
+            /* 沒有設置寬高是因為將外層的位置設成旋轉點
+            外層div旋轉才不會導致秒針自己為中心旋轉 */
+        }
+
+        .circle {
+            background-color: rgb(14, 7, 123);
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 250px;
+            top: 250px;
+            z-index: 2;
+            transform: translate(-15px, -15px);
+            border-radius: 50%;
+        }
+
+        .head-sec {
+            position: absolute;
+            width: 10px;
+            height: 230px;
+            background-color: tomato;
+            left: -5px;
+            /* width的一半將它拉回 */
+            top: -230px;
+        }
+
+        .head-min {
+            position: absolute;
+            width: 10px;
+            height: 200px;
+            background-color: rgb(71, 255, 255);
+            left: -5px;
+            /* width的一半將它拉回 */
+            top: -200px;
+        }
+
+        .head-hr {
+            position: absolute;
+            width: 10px;
+            height: 160px;
+            background-color: rgb(126, 71, 255);
+            left: -5px;
+            /* width的一半將它拉回 */
+            top: -160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="circle"></div>
+        <div class="head hour">
+            <div class="head-hr"></div>
+        </div>
+        <div class="head minute">
+            <div class="head-min"></div>
+        </div>
+        <div class="head second">
+            <div class="head-sec"></div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        'use strict'
+        let second = document.querySelector('.second');
+        let minute = document.querySelector('.minute');
+        let hour = document.querySelector('.hour');
+
+
+        const doRun = () => {
+            let now = new Date();
+            let msec = now.getMilliseconds(); // 供秒數補差用
+            let sec = now.getSeconds(); // 取得秒數
+            let min = now.getMinutes();
+            let hr = now.getHours();
+
+
+            second.style.transform = `rotate(${sec * 6 + 6/1000 *msec}deg)`
+            // 一分鐘轉360度, 所以1秒轉6度 旋轉角度則為  秒數*6
+            minute.style.transform = `rotate(${min * 6 + 6/60 *sec}deg)`
+            // 一小時轉360度 一分鐘6度 分給60秒 所以一秒中轉6/60
+            hour.style.transform = `rotate(${ hr*30 + 30/60 *min }deg)`
+            // 一天轉360度 一小時30度 分給60分鐘 所以一分鐘轉30/60 
+            // 30/60 *min 此運算為補差 時針才不會一直停留
+            setTimeout(doRun, 100);
+            // 將單位改小至100 = 0.1秒 再加上秒真的補差(補毫秒), 秒針會有等速的效果
+        };
+
+        doRun();
+
+
+    </script>
+</body>
+
+</html>
