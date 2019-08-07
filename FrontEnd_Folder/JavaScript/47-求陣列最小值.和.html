@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求陣列最小值及其索引值</title>
+</head>
+
+<body>
+    <script>
+        // 求陣列的最小值及其索引值
+        let t = [90, 34, 8, 2, 39, 65, 70];
+
+        let min, minIndex;
+        min = t[0];     // 初始化預設最小值為第一個值
+        minIndex = 0;
+
+        // 循環陣列中的每個值跟預設的最小值進行比較
+        for (let i = 1; i < t.length; i++) {
+            if (t[i] < min) {
+                min = t[i];
+                minIndex = i;
+            }
+        }
+
+        console.log(min);
+        console.log(minIndex);
+
+
+        // 求陣列的總合及其平均值
+        // let y = 0;
+        // for (let k = 0; k < t.length; k++) {
+        //     x = t[k];
+        //     y += x;
+        // }
+        // console.log('和: ' + y + ' 平均值: ' + y / t.length)
+        
+        var sum = function (a, b) {
+            return a + b;
+            // reduce：將一堆值總結成一個值 過程怎麼計算用function return
+        }
+        let y;
+        y = t.reduce(sum)
+        console.log(y);
+
+
+
+        // 求陣列由小到大排序
+        console.log(t);
+
+        t.sort(function (a, b) {
+            return a - b;
+        })
+        // 若compareFunction(a, b)的回傳值小於0, 則會把 a 排在小於 b 的索引位置
+        // 所以 a 會排在 b 前面
+        console.log(t)
+
+
+    </script>
+</body>
+
+</html>

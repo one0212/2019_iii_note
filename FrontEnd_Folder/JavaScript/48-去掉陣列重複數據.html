@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去掉陣列重複數據</title>
+</head>
+
+<body>
+    <script>
+        // 將一個陣列中重複的數據去除
+        var t = [1, 3, 5, 99, 73, 3, 5, 99, 9];
+        // console.log(t.indexOf(9))
+
+        console.log(t)
+        // 新陣列中判斷元素是否已經存在新陣列
+        let arr = [];
+        // 把原陣列的第一個元素插入到新陣列中
+        arr.push(t[0]);
+
+        // 把後續原陣列中的元素插入到新陣列中, 插入前判斷新陣列中是否存在元素
+        // 如果存在繼續下一次循環插入, 不存在就把元素插入到新陣列中
+
+        for (let i = 1; i < t.length; i++) {
+            // 遍歷陣列中的所有元素, 去掉第一個元素, 因為第一個元素不是有重複的狀況
+            //  t[i] => arr
+            // if (arr.indexOf(t[i]) == -1) {  不使用, ie8不支援 
+            //     arr.push(t[i]);
+            // }
+
+            // 遍歷新陣列, 看當前t[i]是否在新陣列中
+           
+            for (var k = 0; k < arr.length; k++) {
+                if (t[i] === arr[k]) {
+                    // 如果相等, 說明已經在新陣列中存在, 就不能把當前的元素插入新陣列中
+                     
+                    break;  // 結束判斷是否存在的循環
+                }
+            }
+            if (k === arr.length) {  // 判斷迴圈是否到最後, 如果到最後則說明新陣列中沒有t[i]
+                    arr.push(t[i]);
+            }
+            
+           
+            
+        }
+
+        console.log(arr)
+    </script>
+</body>
+
+</html>

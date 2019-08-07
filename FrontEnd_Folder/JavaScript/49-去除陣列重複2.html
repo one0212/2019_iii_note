@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let t = [1, 3, 5, 99, 73, 3, 5, 99, 9];
+        let arr = [];
+
+        for (let i = 0; i < t.length; i++) {
+            
+
+            for (var k = 0; k < t.length; k++) {
+                if (arr[k] == t[i]) {
+                    break;
+                }
+            }
+
+            if (k === t.length) {
+                arr.push(t[i]);
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>
