@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <button onclick="myClick(event)">click me</button>
+
+
+    <script>
+        'use strict';
+        // 嚴格模式
+        let rect = document.querySelector('#rect');
+        let btn = document.querySelector('button');
+
+        const myClick = function (evt) {
+            console.log('myClick 1');
+            console.log(evt)
+        };
+       
+
+        btn.onclick = function(myEvent) {
+            console.log('onclick 2');
+            console.log(myEvent)
+        }
+        // 兩者會進行覆蓋, 
+    </script>
+</body>
+
+</html>
