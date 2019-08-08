@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #rect {
+            background-color: #0f0f97;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+    <button id="btn1">click me 1</button><br>
+    <button id="btn2">click me 2</button><br>
+    <button id="btn3">click me 3</button><br>
+</div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+    let btns = document.querySelectorAll('button');
+    let i;
+
+    const handler1 = function(event){
+        alert('hello~');
+        console.log(event.currentTarget, event.target);
+    };
+
+
+    rect.addEventListener('click', handler1);
+
+
+
+
+</script>
+</body>
+</html>

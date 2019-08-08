@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>balls</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: lightblue;
+           
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border:2px solid #000;
+            background-color:lightsalmon;
+            color:#fff;
+            line-height: 40px;
+            text-align:center;
+            border-radius:50%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="rect">
+        <!-- <div class="ball">88</div> -->
+    </div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i;
+
+
+        const handler = event => {
+        let t = event.target;
+        console.log(t)
+
+        if(t.className === 'ball') {
+            console.log(t.innerHTML);
+            t.style.display = 'none';
+        }
+    };
+    rect.addEventListener('click', handler);
+
+
+    
+
+        for (i = 0; i < 10; i++) {
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.innerHTML = i + 1;
+            b.style.left = i * 50 + 'px';
+            b.style.top = i * 30
+             + 'px';
+
+        
+            b.style.backgroundColor = `rgb(${i*17},100,${i*17})`;
+            
+            rect.appendChild(b)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mousemove</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #97beff;
+            left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="rect"></div>
+    <div id="info"></div>
+
+    <script>
+        const rect = document.querySelector('#rect');
+        const info = document.querySelector('#info');
+        let b, i;
+    
+        const handler = function(event){
+            info.innerHTML = `
+                pageX: ${event.pageX}, pageY: ${event.pageY} <br>
+                offsetX: ${event.offsetX}, offsetY: ${event.offsetY} <br>
+            `;
+        };
+        rect.addEventListener('mousemove', handler);
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mousemove</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #21eff6;
+            left: 100px;
+        }
+
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            background-color: lightsalmon;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <div id="info"></div>
+
+    <script>
+        const rect = document.querySelector('#rect');
+        const info = document.querySelector('#info');
+        let b, i = 0;
+
+        const handler = function (event) {
+            i++
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.style.left = event.offsetX - 10 + 'px';
+            // 10px為ball的半徑 扣掉的話滑鼠的中心點才是圓心
+            b.style.top = event.offsetY - 10 + 'px';
+            b.style.backgroundColor = `hsl(${parseInt(Math.random()*360)},100%,50%)`;
+            //     info.innerHTML = `
+            //         pageX: ${event.pageX}, pageY: ${event.pageY} <br>
+            //         offsetX: ${event.offsetX}, offsetY: ${event.offsetY} <br>
+            //     `;
+            // };
+          
+            b.style.width = `${i}px` 
+            b.style.height = `${i}px` 
+            rect.appendChild(b);
+
+        }   
+            rect.addEventListener('mousemove', handler);
+
+
+    </script>
+</body>
+
+</html>

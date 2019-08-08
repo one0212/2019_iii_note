@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #rect {
+            background-color: #0f0f97;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+    <button id="btn1">click me 1</button><br>
+    <button id="btn2">click me 2</button><br>
+    <button id="btn3">click me 3</button><br>
+</div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+    let btns = document.querySelectorAll('button');
+    let i;
+
+
+    const handler1 = function(event){
+        console.log('handle1')
+        console.log(event.currentTarget, event.target);
+    };
+
+    const handler2 = function(event){
+        console.log('handle2')
+        console.log(event.currentTarget, event.target);
+    };
+
+    rect.addEventListener('click', handler1);
+    btns[0].addEventListener('click', handler2);
+
+    // 會先執行handle2在執行handle1
+    // 加上第三個參數true 順序就會相反
+
+
+</script>
+</body>
+</html>
