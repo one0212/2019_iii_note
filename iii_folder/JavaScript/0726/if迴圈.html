@@ -23,7 +23,7 @@
     <br>
     <button onclick="doTest()">測試</button>
 
-    <div id="my_out"><img class="img" src="" alt=""></div>
+    <div id="my_out"><img class="img" src="images/food.jpeg" alt=""></div>
     
 
     <script>
@@ -36,12 +36,13 @@
 
             console.log(`gender ${gender} age ${age}`)
             if ( gender === 'female' && age >= 20) {
-                my_out.innerHTML = '<img src="images/food.jpeg">';
+                // my_out.innerHTML = '<img src="images/food.jpeg">';
+                img.src = 'images/food.jpeg'; // + new Date().getTime()
             } else {
-                img.setAttribute('src', 'images/cake.jpeg');
+                // img.setAttribute('src', 'images/cake.jpeg');
                 console.log(img)
                 // my_out.innerHTML = '<img src="images/cake.jpeg">';
-                // img.src = '<img src="images/CAKE.jpeg">'; // + new Date().getTime()
+                img.src = 'images/CAKE.jpeg'; // + new Date().getTime()
             }
         }    
         
