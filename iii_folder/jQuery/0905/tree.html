@@ -52,13 +52,31 @@
             $("td").click(function () {
                 // $(this).children(".box").css("background", "red")
                 $(this).find(".box").css("background", "red").css("border-radius", "50%");
-                $(this).next().css("background", "pink");
+                
+                $(this).css("background","none")
+                // 每次點擊都會先重製自己的背景色
+                .siblings().css("background", "lightsalmon");
+                // siblings除了自己以外
 
-
+                // next
+                // $(this).next().css("background", "pink");
+                // $(this).nextAll().css("background", "pink");
+                // nextAll()往後的所有元素
+                // $(this).nextUntil(".stop").css("background", "pink");
             });
 
-            $(":checkbox").click(function() {
-                $(this).next().css("background", "pink");
+            // $(":checkbox").click(function () {
+            //     $(this).next().css("background", "pink");
+            // })
+
+            // prev
+            $(":checkbox").click(function () {
+                // $(this).prev().css("background", "pink");
+                // 往前
+                $(this).prevAll().css("background", "pink");
+                // 往前的所有元素
+                $(this).prevUntil(".prevUn").css("background", "green");
+                // 往前到那個位置停止
             })
         })
     </script>
@@ -77,7 +95,7 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td class="stop">STOP</td>
                 <td></td>
             </tr>
             <tr>
@@ -112,14 +130,23 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td class="stop">stop</td>
                 <td></td>
             </tr>
         </table>
         <div class="py-2">
-            <input type="checkbox"><span>yes</span>
+            <input type="checkbox">
+            <span>yes</span>
         </div>
-        
+        <div class="py-2">
+            <span>哈哈</span>
+            <span class="prevUn">哈哈</span>
+            <span>哈哈</span>
+            <span>哈哈</span>
+            <span>哈哈</span>
+            <span>no</span>
+            <input type="checkbox">
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
