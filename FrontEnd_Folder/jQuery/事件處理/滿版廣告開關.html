@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>事件處理</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .full {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            width: 500px;
+            height: 20%;
+            background: #fff;
+            position: relative;
+            padding: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            z-index: 10;
+            background: #000;
+            color: #fff;
+            border-radius:50%;
+            width: 30px;
+            height: 30px;
+            line-height:30px;
+            text-align:center;
+
+        }
+        .full.x {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="open">open</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem doloribus alias corrupti eum minus in deleniti
+        distinctio praesentium ipsam vitae modi totam nulla sequi, adipisci et voluptatem dicta assumenda dolorem?</p>
+    <p>Perspiciatis ratione totam, illum vel aliquid quidem ullam fugiat repellendus vitae accusantium eius reiciendis
+        sunt nesciunt corrupti velit quod hic provident sed libero perferendis inventore iusto harum animi aliquam? Id.
+    </p>
+    <p>Dolorum dolore assumenda esse quae quasi sed delectus, fuga amet tenetur beatae quas, incidunt officia laboriosam
+        ipsum dicta natus accusantium porro labore magnam. Nemo incidunt, aliquam consequuntur dolores animi velit?</p>
+    <p>Vel quas est iure quidem, earum enim maxime quos iusto, quod velit dolores repudiandae. Numquam illum blanditiis,
+        cupiditate repellat, tempora cumque vel odit excepturi iure, illo doloremque harum. Laudantium, soluta.</p>
+    <p>Nihil, illum reiciendis. Veniam alias maiores necessitatibus consequuntur doloremque accusantium incidunt facilis
+        velit sequi ad amet rerum fuga, neque porro blanditiis dolorum asperiores quo delectus explicabo! Unde dolor
+        delectus ipsam?</p>
+    <p>Suscipit obcaecati ea officia iure minus. Facilis eos excepturi enim praesentium, delectus dignissimos,
+        consectetur quae exercitationem mollitia in quasi dolores ad esse commodi nulla? Iste consequuntur tempora quos
+        autem dolorem!</p>
+    <p>Iure, iusto quod. Sint beatae, ullam deserunt tempore tempora ex amet eos facere voluptatum aliquam nulla magnam
+        illum ducimus minima commodi quod vero quia, iure provident quisquam similique ipsa asperiores!</p>
+    <p>Voluptate vero, consequuntur praesentium obcaecati exercitationem maxime maiores, nihil aperiam libero veritatis
+        alias temporibus molestias dolorem laboriosam id architecto ex blanditiis laudantium expedita reiciendis ducimus
+        numquam. Ad architecto dolorem eligendi.</p>
+    <p>Debitis earum possimus enim distinctio obcaecati recusandae pariatur tempore, excepturi sit doloribus rem ea
+        ipsam sunt dolorem in et, fugit quasi facilis saepe hic soluta quas vero accusamus. Voluptatum, quia.</p>
+    <p>Similique suscipit asperiores cum aliquam, quisquam quidem consequatur nihil neque labore dolore explicabo
+        tempora inventore ad enim! Et nihil recusandae ea doloribus iste ullam, incidunt unde fugit, labore nam aperiam.
+    </p>
+    <p>Odit debitis necessitatibus perferendis repudiandae repellat nemo sit soluta nihil mollitia. Eligendi amet vel
+        tempore, numquam vitae dolore. Modi reiciendis consectetur dolorem eaque provident consequatur perferendis,
+        minima sit ea dolor.</p>
+    <p>Nemo laudantium excepturi, ex delectus, vero officiis maxime nesciunt voluptatem asperiores distinctio quaerat
+        vel cumque fugiat, laborum a. Cum tenetur commodi maxime tempore rerum accusamus sequi, eos recusandae quis
+        nemo?</p>
+    <p>A dolorem quidem dignissimos impedit enim accusantium, in nulla ea dicta placeat tempora, at eius numquam harum,
+        alias porro natus voluptatem sed odit facere magnam voluptates aut! Quis, totam architecto!</p>
+    <p>Atque aliquid id enim odio voluptatem! Dolorem iste esse dicta libero maiores explicabo velit nulla! Vero,
+        necessitatibus. Totam exercitationem, perferendis delectus excepturi quia, libero corrupti in natus tempora nam
+        consequuntur!</p>
+    <p>Et necessitatibus vero aut. Nostrum nesciunt in laborum earum itaque tempore sint ipsum illum vitae enim
+        blanditiis possimus dignissimos vel ea mollitia consectetur totam illo, sapiente saepe, ullam cum suscipit!</p>
+    <p>Vitae asperiores laboriosam recusandae expedita ipsa animi architecto deserunt earum reiciendis, dolorem itaque
+        doloribus aliquam inventore laudantium dolores corporis nemo fugiat? Rerum, ab numquam sunt quasi ducimus earum
+        totam maiores!</p>
+    <p>Similique temporibus eaque ea exercitationem impedit commodi voluptate sequi cumque, voluptatum incidunt, soluta
+        nesciunt veniam pariatur quasi magni eveniet adipisci? Dolores repellendus delectus necessitatibus sint nihil
+        aperiam laboriosam mollitia? Debitis.</p>
+    <p>Numquam architecto doloremque tenetur veniam enim alias molestias, amet velit, illo vero incidunt provident
+        repellat tempore? In, eos illo? Voluptatibus adipisci dolor minima impedit possimus reprehenderit excepturi amet
+        quisquam dolorum!</p>
+    <p>Laudantium dolore magni dicta itaque cumque nobis ducimus illo ex sit nam. Culpa tenetur dolores sequi quos
+        eveniet eligendi adipisci distinctio hic, quae corporis tempora ipsum? Illo rerum temporibus possimus.</p>
+    <p>Neque sint aut veniam quisquam totam, distinctio provident doloremque sed, hic veritatis quibusdam deleniti eos
+        dolor commodi! Consectetur eaque nostrum, voluptatibus tenetur, eos fugiat aliquid temporibus impedit ullam
+        alias laboriosam.</p>
+    <p>Odio dolor aliquam laboriosam facere dolorum voluptatem dolore quis in, modi voluptatibus eligendi fugit eveniet
+        consequuntur cumque repudiandae possimus tempora sit deleniti ratione! Laboriosam, eum soluta sed necessitatibus
+        similique temporibus.</p>
+    <p>Voluptates quia tempore nemo facilis a quidem praesentium sequi, aperiam illum. Fugiat perspiciatis
+        exercitationem ipsam, a provident libero dolorem amet quas! Recusandae quos eum repellendus quidem ratione ipsam
+        sint deserunt.</p>
+    <p>Dignissimos non id vel. Provident ratione atque, delectus quas aliquam repudiandae aspernatur quia vitae officia
+        quis, fuga ea earum iste porro accusamus obcaecati? Consectetur, adipisci! Similique impedit ut aliquam
+        voluptates.</p>
+    <p>Velit inventore natus animi aliquam quisquam officiis iure molestiae. Reprehenderit, dignissimos libero? Ea
+        consectetur eligendi fuga accusantium quos ipsum earum sit molestias, velit, maiores, alias beatae veniam
+        necessitatibus corrupti tempore.</p>
+    <p>Libero ipsum suscipit adipisci impedit commodi enim distinctio ratione voluptatem, velit tempore porro iure vero,
+        illo magnam animi sed voluptate veritatis explicabo alias veniam incidunt facere officia accusantium officiis?
+        Natus?</p>
+    <p>Iure quisquam magni maiores quod nobis voluptas? Illum rerum tempora magni consectetur aperiam maxime explicabo
+        quas, voluptas aspernatur ducimus sint autem fugiat corrupti similique molestiae, minus, natus inventore maiores
+        placeat!</p>
+    <p>Unde praesentium hic magnam explicabo dolor nihil ducimus minus adipisci commodi! Aspernatur adipisci voluptas
+        consectetur fugit consequuntur soluta odio incidunt error eius exercitationem saepe pariatur, ex laboriosam
+        aperiam eaque praesentium?</p>
+    <p>Ipsum, voluptates nihil. Ab aut reiciendis officiis, facere explicabo dolorum est at, ipsum quaerat eaque quis
+        expedita quam, earum cupiditate numquam? Vel hic cumque nobis possimus, doloribus similique velit molestiae?</p>
+    <p>Itaque atque, non dolorem ex illum culpa quos unde! Aspernatur nisi voluptates blanditiis doloribus facere, ab
+        accusantium iusto natus omnis voluptatibus libero beatae rerum harum rem placeat, veniam minima quo!</p>
+    <p>Possimus reprehenderit quidem dolorum aut numquam omnis excepturi neque accusamus, reiciendis architecto
+        obcaecati itaque quaerat hic praesentium ducimus magni fugiat quod doloribus maxime aliquid autem aspernatur
+        delectus, quibusdam sunt! Similique!</p>
+    <div class="full">
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum voluptate impedit veniam
+            voluptatem. Cupiditate harum, facere voluptate unde architecto nobis perferendis aut modi laboriosam
+            blanditiis, hic molestiae excepturi quia?<a href="#" class="close">X</a></div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".close").click(function(){
+                // $(".full").hide();
+                $(".full").addClass("x");
+                // style預先寫好樣式 增添className 不需再加上.
+            })
+            $(".open").click(function(){
+                $(".full").removeClass("x")
+            })
+        })
+    </script>
+</body>
+
+</html>
