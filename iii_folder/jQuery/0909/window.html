@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            height: 400vh;
+        }
+        .scrollImg {
+            position:fixed;
+            top: -50%;
+            left: 50%;
+            /* transform:translate(-50%,-50%); */
+            margin:-250px 0 0 -250px;
+            transition:.5s;
+        }
+        #gotop {
+            position:fixed;
+            bottom:20px;
+            right:20px;
+        }
+        #gomiddle {
+            position:fixed;
+            bottom: 80px;
+            right: 20px;
+        }
+    </style>
+  </head>
+  <body>
+      <button id="gotop"class="btn btn-info">top</button>
+      <button id="gomiddle"class="btn btn-info">middle</button>
+      <img class="scrollImg" src="images/04.png" alt="">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#gotop").click(function(){
+            $(window).scrollTop(0);
+        })
+        $(window).scroll(function(){
+            console.log("scroll");
+            let scrollTop=$(this).scrollTop();
+            // console.log(scrollTop)
+            $(".scrollImg").css("transform","rotate("+scrollTop+"deg)")
+            if(scrollTop>800) {
+                $(".scrollImg").css("top","50%");
+            } else {
+                $(".scrollImg").css("top","-50%"); 
+            }
+        })
+
+        $(window).resize(function(){
+            console.log("width:"+$(this).width());
+            console.log("height:"+$(this).height());
+            // resize() 偵測瀏覽器大小
+        })
+    </script>
+  </body>
+</html>
