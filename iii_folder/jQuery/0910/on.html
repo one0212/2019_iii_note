@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <button id="on" class="btn btn-info">on</button>
+        <div class="py-2">
+            <input id="input" class="form-control" type="text">
+        </div>
+        <div class="py-2">
+            <button id="add" type="button" class="btn btn-primary">add</button>
+        </div>
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        let number = 3;
+        // $("#on").on("click", function () {
+        //     console.log("click");
+        // });
+        $("#input").on("change keyup",function(){
+            // keyup 鍵盤輸入時會同步顯示
+            let inputValue = $(this).val();
+            console.log(inputValue);
+        });
+        $("#on").on({
+            click:function(){
+                console.log("click");
+            },
+            dblclick:function(){
+                console.log("double click");
+            },
+            mouseenter:function(){
+                console.log("mouse enter");
+            },
+            mouseleave:function(){
+                console.log("mouse leave");
+            }
+        });
+        // $("li").on("click",function(){
+        //     // console.log("ya");
+        //     let content = $(this).text();
+        //     console.log(content);
+        // });
+
+            $("#list").on("click","li",function(){
+            // console.log("ya");
+            let content = $(this).text();
+            console.log(content);
+        });
+        
+
+        $("li").on("click",function(){
+            let newRow = `<li>${number}</li>`;
+            $("#list").append(newRow);
+            number++;
+        })
+
+        $("#add").on("click",function(){
+            let newRow = `<li>${number}</li>`;
+            $("#list").prepend(newRow);
+            number++;
+        })
+    </script>
+</body>
+
+</html>
