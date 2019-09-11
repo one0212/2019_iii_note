@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Show Hide Menu</title>
+
+  <style>
+    body {
+      background: #ccc;
+    }
+
+    .transition {
+      transition: 0.4s;
+    }
+
+    .wrapper {
+      width: 800px;
+      margin: 20px auto
+    }
+
+    .menu {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 0 0 2px;
+    }
+
+    ul,
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bar {
+      width: 36px;
+      height: 6px;
+      background: #666;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+
+    .active .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 7px);
+      transform: rotate(-45deg) translate(-9px, 7px);
+    }
+
+    .active .bar2 {
+      opacity: 0;
+    }
+
+    .active .bar3 {
+      -webkit-transform: rotate(45deg) translate(-9px, -8px);
+      transform: rotate(45deg) translate(-9px, -8px);
+    }
+    #submenu {
+      background: rgba(255,255,255,.8);
+      color:#333;
+      opacity:0;
+      overflow: hidden;
+      transition:.5s;
+      max-height:0;
+    }
+    #submenu li a{
+      text-decoration: none;
+      color:#333;
+      display:block;
+      padding: 10px 10px;
+    }
+    #submenu li:hover a{
+     background: rgb(223, 188, 188);
+    }
+    .active #submenu {
+      opacity:1;
+      max-height:300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="menu transition" id="menu">
+      <div class="bar bar1 transition"></div>
+      <div class="bar bar2 transition"></div>
+      <div class="bar bar3 transition"></div>
+      <ul id="submenu">
+        <li><a href="">史努比</a></li>
+        <li><a href="">查理布朗</a></li>
+        <li><a href="">糊塗塌客</a></li>
+        <li><a href="">歐拉夫</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script>
+    $("html").click(function(){
+      console.log("xx")
+      $("#menu").removeClass("active")
+    })
+    $("#menu").click(function(e){
+      e.stopPropagation();
+      $(this).toggleClass("active");
+    })
+
+  </script>
+</body>
+
+</html>
