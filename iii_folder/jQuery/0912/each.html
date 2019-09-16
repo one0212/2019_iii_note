@@ -62,8 +62,8 @@
     <script>
         let total = 0;
         $(".table td").each(function () {
-            console.log($(this).text())
-        total = total+Number($(this).text());
+            console.log($(this).text()) // 為一個字串 所以要將字串轉型
+        total = total + Number($(this).text());
         })
         $("#total").text(total);
     </script>

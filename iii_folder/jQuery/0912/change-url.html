@@ -73,9 +73,11 @@
         $("figure").click(function () {
             $(this).addClass("active")
                 .siblings().removeClass("active")
-           
+        //  let pic = $(this).find("img").attr("src")
+        //  $("#bigImg").attr("src",src);
         })
 
+        // 同上
         $("figure img").click(function () {
             let src = $(this).attr("src");
             $("#bigImg").attr("src",src)

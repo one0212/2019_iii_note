@@ -28,7 +28,7 @@
 
 <body>
     <div class="container">
-        <table class="table table-bordered table-sm">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th><input type="checkbox" id="checkAll"></th>
@@ -69,29 +69,32 @@
     <script>
         let dataCount=$("tbody tr").length;
         console.log(dataCount);
-        $("tbody:checkbox").click(function () {
+        // 共四筆資料
+        $("tbody :checkbox").click(function () {
             let checked = $(this).prop("checked");
             let checkedCount=$("tbody :checked").length;
             console.log(checkedCount);
             console.log(checked);
             if(checked){
-                $(this).closest("tr").addClass("active")
+                $(this).closest("tr").addClass("active");
             }else{
-                $(this).closest("tr").removeClass("active")
+                $(this).closest("tr").removeClass("active");
             }
+
             if(dataCount==checkedCount){
-                $("#checkAll").prop("checked", true)
+                // 表總筆數＝勾選筆數
+                $("#checkAll").prop("checked", true);
             }else{
-                $("#checkAll").prop("checked", false)
+                $("#checkAll").prop("checked", false);
             }
         })
         $("#checkAll").click(function () {
             let checkAll = $(this).prop("checked");
             $("tbody :checkbox").prop("checked", checkAll);
             if (checkAll) {
-                $("tbody tr").addClass("active")
+                $("tbody tr").addClass("active");
             } else {
-                $("tbody tr").removeClass("active")
+                $("tbody tr").removeClass("active");
             }
 
         })
