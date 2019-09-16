@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/all.min.css">
     <style>
         .wrapper {
-            width: 800px;
+            max-width: 800px;
             height: 300px;
             background: #000;
             margin: 0 auto;
@@ -82,15 +82,15 @@
 <body>
     <div class="wrapper position-relative">
         <ul id="slider-container" class="list-unstyled slider-container d-flex position-absolute">
-            <li><img src="images/slide1.jpeg" alt=""></li>
+            <!-- <li><img src="images/slide1.jpeg" alt=""></li>
             <li><img src="images/slide2.jpeg" alt=""></li>
-            <li><img src="images/slide3.jpeg" alt=""></li>
+            <li><img src="images/slide3.jpeg" alt=""></li> -->
             <!-- <li><img src="images/slide4.jpeg" alt=""></li> -->
         </ul>
         <ul id="slider-dot" class="list-unstyled slider-dot position-absolute d-flex justify-content-center m-0">
+            <!-- <li></li>
             <li></li>
-            <li></li>
-            <li></li>
+            <li></li> -->
             <!-- <li></li> -->
         </ul>
         <div id="prev_slide" class="slide_btn prev_slide position-absolute d-flex">
@@ -113,10 +113,23 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        var sliderWidth = 800;
+        var sliderWidth = $(".wrapper").width();
         var sliderNum = 0;
-        var sliderCount = $(".slider-container li").length;
+        let slidePictures=["slide1.jpeg", "slide2.jpeg", "slide3.jpeg", "slide4.jpeg"];
+        // var sliderCount = $(".slider-container li").length;
         // 動態使分頁不變黑屏
+
+        let sliderCount = slidePictures.length;
+        // 因動態產生 所以以上的li抓不到 要用陣列長度去抓
+
+        slidePictures.forEach(function(slide){
+            let sliderCount = `<li><img src="../images/${slide}" alt=""></li>`
+            $("#slider-container").append(sliderCount);
+            $("#slider-dot").append(`<li></li>`);
+
+        })
+
+
 
         $("#slider-container").css("width",sliderCount*sliderWidth);
         console.log(sliderCount);
@@ -160,7 +173,14 @@
             if(sliderNum>(sliderCount-1))sliderNum=0;
             console.log(sliderNum)
             slideGo()
-        }, 3000)
+        }, 5000)
+
+        $(window).resize(function(){
+            sliderWidth = $(".wrapper").width();
+            $("#slider-container").css("width",sliderCount*sliderWidth);
+            slideGo();
+            // 讓輪播可以重置 不因改變解析度大小而輪播圖片受到裁切
+        })
     </script>
 </body>
 

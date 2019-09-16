@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="py-2">
+            <button type="button" class="btn btn-primary" data-dom="append">append</button>
+            <button type="button" class="btn btn-primary" data-dom="prepend">prepend</button>
+            <button type="button" class="btn btn-primary" data-dom="appendTo">appendTo</button>
+            <button type="button" class="btn btn-primary" data-dom="prependTo">prependTo</button>
+            <button data-dom="remove" type="button" class="btn btn-primary">remove</button>
+            <button data-dom="empty" type="button" class="btn btn-primary">empty</button>
+        </div>
+        <div class="py-2">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr id="prependTo">
+                        <td>tt</td>
+                        <td>ttt@gmail.com</td>
+                        <td>0911111111</td>
+                    </tr>
+                    <tr id="appendTo">
+                            <td>mm</td>
+                            <td>mm@gmail.com</td>
+                            <td>0922222222</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        let newRow = `<tr>
+                        <td>aaaa</td>
+                        <td>aaaa@gmail.com</td>
+                        <td>0977777777</td>
+                    </tr>`
+        let newRowLast = `<tr>
+                        <td>ggg</td>
+                        <td>ggggg@gmail.com</td>
+                        <td>0988888888</td>
+                    </tr>`
+        $(".btn").click(function () {
+            let dom = $(this).data("dom");
+            if (dom == "append") {
+                $("tbody").append(newRowLast);
+            } else if (dom == "prepend") {
+                $("tbody").prepend(newRow)
+            } else if (dom == "appendTo") {
+                $("#appendTo").appendTo("tbody")
+            } else if (dom == "prependTo") {
+                $("#prependTo").prependTo("tbody")
+            } else if (dom == "remove") {
+                $("tbody").remove()
+            } else {
+                $("tbody").empty()
+            }
+        })
+    </script>
+</body>
+
+</html>
