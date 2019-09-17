@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        .filed {
+            /* width: 400px; */
+            height: 400px;
+            background: rgb(182, 137, 137);
+        }
+
+        .box-img {
+            width: 150px;
+            height: 150px;
+            /* background: lightsalmon; */
+            /* top:0;
+            left:0; */
+            /* transition: .5s; */
+        }
+
+        i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="filed position-relative">
+            <img class="box-img position-absolute" src="../images/04.png" alt="">
+        </div>
+        <div class="py-2 text-center">
+            <div class="py-1">
+                <button id="up" data-direction="up" type="button" class="btn btn-info"><i
+                        class="fas fa-arrow-alt-circle-up"></i></button>
+            </div>
+            <div class="">
+                <button id="left" data-direction="left" type="button" class="btn btn-info"><i
+                        class="fas fa-arrow-alt-circle-left"></i></button>
+                <button id="down" data-direction="down" type="button" class="btn btn-info"><i
+                        class="fas fa-arrow-alt-circle-down"></i></button>
+                <button id="right" data-direction="right" type="button" class="btn btn-info"><i
+                        class="fas fa-arrow-alt-circle-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        let speed = 10;
+
+        $(".btn").click(function () {
+            let direction = $(this).data("direction");
+            let style;
+            switch (direction) {
+                case "up":
+                    // $(".box").css("top", "-="+speed+"px");
+                    //$(".box").animate({
+                    style = {
+                        "top": "-=" + speed
+                    }
+                    break;
+                case "down":
+                    // $(".box").animate({
+                    style = {
+                        "top": "+=" + speed
+                    }
+                    break;
+                case "left":
+                    //$(".box").animate({
+                    style = {
+                        "left": "-=" + speed
+                    }
+                    break;
+                case "right":
+                    // $(".box").animate({
+                    style = {
+                        "left": "+=" + speed
+                    }
+                    break;
+            }
+            $(".box-img").stop(true, true).delay(1500).animate(style);
+        })
+
+
+        // $("#up").click(function () {
+        //     $(".box-img").css("top", "-=" + speed)
+        // });
+        // $("#left").click(function () {
+        //     $(".box-img").css("left", "-=" + speed)
+        // })
+        // $("#right").click(function () {
+        //     $(".box-img").css("left", "+=" + speed)
+        // });
+        // $("#down").click(function () {
+        //     $(".box-img").css("top", "+=" + speed)
+        // });
+    </script>
+</body>
+
+</html>
