@@ -1,14 +1,17 @@
 // 引入express
 const express = require('express');
-
 const url = require('url');
 const bodyParser = require('body-parser');
+const multer= require('multer');
+const upload = multer({dest:'tmp_uploads/'})
+const fs = require('fs');
 
 // 建立web server 物件 
 const app = express();
 
 const urlencodedParser = bodyParser.urlencoded({extended: false}); // false為沒有安裝 qs lib
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // 樣板引擎設定
 app.set('view engine', 'ejs');
@@ -22,12 +25,11 @@ app.get('/', (req, res)=>{
     res.render('home', {name:'one-one'});
     // res.send('snoopy');
 });
-
-// app.get('/123', (req,res) =>{
-//     res.send('apple');
-
-// });
-
+//////////////////////////////產生動態檔案 因為沒有b.html
+app.get('/b.html', (req,res) =>{
+    res.send(`<h2>Hello World!</h2>`);
+});
+///////////////////////////////////////////////////////
 app.get('/sales01',(req, res)=>{
         const data = require('./../data/sales01');
         //res.send(JSON.stringify(sales));
@@ -59,7 +61,38 @@ app.post('/try-post-form', urlencodedParser, (req, res)=>{
     // res.send(JSON.stringify(req.body));
 })
 ////////////////////////////////get與post差別/////////////////////////////////
+app.get('/try-post-form2', (req, res)=>{
+    res.send('get: try-post-form2');
+});
+app.post('/try-post-form2', (req, res)=>{
+    res.json(req.body);
 
+    //res.send(JSON.stringify(req.body));
+});
+app.put('/try-post-form2', (req, res)=>{
+    res.send("PUT: try-post-form2");
+});
+
+app.post('/try_upload',upload.single('avatar'),(req, res)=>{
+    if(req.file && req.file.originalname) {  //////如果只判斷req.file但檔案為空 仍會看成是true
+        console.log(req.file);
+
+        switch(req.file.mimetype) {
+            case 'image/png':
+            case 'image/jpeg':
+                fs.createReadStream(req.file.path)
+                    .pipe(
+                        fs.createWriteStream('public/img/' + req.file.originalname)
+                    );
+                    res.send('ok');
+                break;
+            default:
+                return res.send('ohoh bad file type');
+        }
+    } else {
+        res.send('ohoh no uploads');
+    }
+})
 
 // 自訂404頁面  須放在路由設定的後面
 app.use((req,res)=>{
