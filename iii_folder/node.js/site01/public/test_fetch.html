@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fetch</title>
+</head>
+<body>
+    <div id="info"></div>
+    <button>click</button>
+
+    <script src="./lib/jquery-3.4.1.js"></script>
+    <script>
+        $("button").click(function(){
+            console.log('haha');
+            const obj = {
+                name: "oneone",
+                age: 20
+            };
+            fetch('try-post-form2',{
+                body: JSON.stringify(obj),
+                headers: {
+                    'content-type': 'application/json'
+            },
+            method:'POST'
+        })
+        .then(response=>{
+            return response.json();
+            // 轉成json回應
+        })
+        .then(obj=>{
+            $("#info").text(JSON.stringify(obj))
+        });
+    });
+    </script>
+</body>
+</html>
