@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pushState</title>
+    <script src="./lib/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <button id="push">push</button>
+    
+    <script>
+        let i = 1;
+        $("#push").click(function(){
+            i++;
+            history.pushState({i:i}, 't'+i, '/page'+i);
+        });
+        // pushState() 取用三個參數：一個 state 物件、title（目前忽略）與 URL（可選用）
+        window.onpopstate = function(){
+            console.log(history.state);
+        // 每次 active 的歷史紀錄被更動的時候，一個 popstate 事件會被發送到目前的 window。
+        }
+    </script>
+</body>
+</html>
