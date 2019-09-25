@@ -93,6 +93,37 @@ app.post('/try_upload',upload.single('avatar'),(req, res)=>{
         res.send('ohoh no uploads');
     }
 })
+///////////////////////////////////////////////////////////////////////
+app.get('/my-params1/:action?/:id?',(req, res)=>{ //action 和 id 是可以自己取的變數名稱  ?表示可有可無此屬性
+    res.json(req.params);
+})
+
+app.get('/my-params2/*/*?',(req, res)=>{ // * 代表所有的東西  轉譯後會設定成{索引值:*}
+    res.json(req.params);
+})
+
+app.get(/^\/09\d{2}\-?\d{3}\-?\d{3}$/, (req, res)=>{
+    let str = req.url.slice(1);
+    str = str.split('?')[0]; // 將get參數切除
+    str = str.split('-').join('');
+    res.send('手機:' + str);
+})
+////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////模組化start///////////////////////////////
+//1
+const admin1 = require(__dirname + '/admins/admin1');
+admin1(app);
+//2
+app.use(require(__dirname + '/admins/admin2'));
+//3
+app.use('/abc', require(__dirname + '/admins/admin3'));
+// baseUrl
+//會員管理example
+app.use('/admin4',require(__dirname + '/admins/admin4'))
+//////////////////////////////模組化end///////////////////////////////
+
+
 
 // 自訂404頁面  須放在路由設定的後面
 app.use((req,res)=>{
