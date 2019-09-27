@@ -7,14 +7,18 @@ const upload = multer({ dest: 'tmp_uploads/' })
 const fs = require('fs');
 const session = require('express-session');
 const moment = require('moment-timezone');
-const mysql = require('mysql')
+const mysql = require('mysql');
+const bluebird = require('bluebird');
+const cors = require('cors');
 const db = mysql.createConnection({
     host: '35.201.219.20',
     user: 'skier',
-    password: '',
+    password: 'XmpP8u42',
     database: 'SKI'
 })
 db.connect();
+
+bluebird.promisifyAll(db);
 
 // 建立web server 物件 
 const app = express();
@@ -25,7 +29,7 @@ app.use(bodyParser.json());
 
 // 設定靜態資料夾
 app.use(express.static('public'));
-
+app.use(cors());
 ////////////////////////////////////////session//////////////////////////////////////
 app.use(session({
     saveUninitialized: false,   // 沒使用到session時是否自動建立session  default false
@@ -171,15 +175,15 @@ app.use('/admin4', require(__dirname + '/admins/admin4'))
 
 ///////////////////////////////mySQL  skier//////////////////////////
 app.get('/try-db', (req, res) => {
-    const sql = "SELECT * FROM `MGNT_ADMIN`";
-    db.query(sql, (error, results, fields) => {
+    const sql = "SELECT * FROM `MGNT_VENDOR` WHERE `name` like ?";
+    db.query(sql, ["%小明%"],(error, results, fields) => {
         console.log(error);
         console.log(results);
         console.log(fields);
         // res.json(results);
 
         for (let r of results) {
-            r.create_time = moment(r.create_time).format('YYYY-MM-DD');
+            r.create_time2 = moment(r.create_time).format('YYYY-MM-DD');
         }
 
         res.render('try-db', {
@@ -187,7 +191,36 @@ app.get('/try-db', (req, res) => {
         });
     });
 });
+///////////////////////////////bluebird//////////////////////////////
+app.get('/try-db2/:page?', (req, res) => {
+   let page = req.params.page || 1;
+   let perPage = 5;
+   const output = {};
 
+   db.queryAsync("SELECT count(1) total FROM `MGNT_SKI_TICKETS`")
+   .then(results=>{
+    //    res.json(results);
+       output.total = results[0].total;
+       return db.queryAsync(`SELECT * FROM MGNT_SKI_TICKETS LIMIT ${(page-1)*perPage}, ${perPage}`)
+   })
+   .then(results=>{
+        output.rows = results;
+        res.json(output);
+   })
+   .catch(error=>{
+       console.log(error)
+   })
+})
+
+///////////////////////////////9/27準備後端服務////////////////////////
+app.get('/try-session2',(req, res)=>{
+    req.session.views = req.session.views || 0;
+    req.session.views++;
+
+    res.json({
+        views: req.session.views
+    })
+})
 
 // 自訂404頁面  須放在路由設定的後面
 app.use((req, res) => {
