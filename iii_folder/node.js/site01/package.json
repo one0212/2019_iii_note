@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.5",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
