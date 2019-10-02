@@ -9,7 +9,19 @@
 <body>
     <div id="info"></div>
     <script>
-        fetch('http://localhost:3000/try-session2')
+        //////////////////////////09/27fetch
+        // fetch('http://localhost:3000/try-session2')
+        // .then(response=>{
+        //     return response.text()
+        // })
+        // .then(txt=>{
+        //     document.querySelector("#info").innerHTML = txt
+        // })
+        
+        fetch('http://localhost:3000/try-session2',{
+            method: 'get', // 沒有設定預設為get
+            credentials: 'include'
+        })
         .then(response=>{
             return response.text()
         })
