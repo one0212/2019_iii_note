@@ -23,13 +23,30 @@ bluebird.promisifyAll(db);
 // 建立web server 物件 
 const app = express();
 
-const urlencodedParser = bodyParser.urlencoded({ extended: false }); // false為沒有安裝 qs lib
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// const urlencodedParser = bodyParser.urlencoded({ extended: false }); // false為沒有安裝 qs lib
+
 
 // 設定靜態資料夾
 app.use(express.static('public'));
-app.use(cors());
+// app.use(cors());
+const whiteList = ['http://localhost:5000','http://localhost:8080','http://localhost:3000',undefined]; //3000的origin為undefined 所以加上undefined
+const corsOptions = {
+    credentials: true,
+    origin: function(origin, callback){
+        // console.log('origin: ' + origin)
+
+        if(whiteList.indexOf(origin)>=0){
+            callback(null, true)
+        } else {
+            // callback(new Error('EEEEEEEEEEEEEEEE')) // 不允許且直接報錯誤訊息
+            callback(null, false) // 錯誤訊息為空值 不允許
+        }
+    }
+}
+app.use(cors(corsOptions))
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 ////////////////////////////////////////session//////////////////////////////////////
 app.use(session({
     saveUninitialized: false,   // 沒使用到session時是否自動建立session  default false
@@ -82,7 +99,7 @@ app.get('/try-post-form', (req, res) => {
     res.render('try-post-form');
 })
 
-app.post('/try-post-form', urlencodedParser, (req, res) => {
+app.post('/try-post-form', (req, res) => {
     res.render('try-post-form', req.body);
 
     // res.send(JSON.stringify(req.body));
@@ -171,6 +188,8 @@ app.use('/abc', require(__dirname + '/admins/admin3'));
 // baseUrl
 //會員管理example
 app.use('/admin4', require(__dirname + '/admins/admin4'))
+
+app.use('/address_book', require(__dirname + '/address_book') );
 //////////////////////////////模組化end///////////////////////////////
 
 ///////////////////////////////mySQL  skier//////////////////////////
