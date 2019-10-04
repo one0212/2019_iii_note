@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+        #mycanvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="300" height="300"></canvas>
+    <script>
+        var canvas = document.querySelector("#mycanvas");
+        var context = canvas.getContext("2d");
+
+        // 畫筆顏色
+        context.fillStyle= "lightsalmon";
+        context.strokeStyle= "pink";
+        // 畫筆粗細
+        context.lineWidth = 2;
+        
+        // //陰影效果
+        // context.shadowOffsetX = 4;
+        // context.shadowOffsetY = 2;
+        // context.shadowBlur = 4;
+        // context.shadowColor = '#ccc';
+
+        // // 矩形
+        // context.strokeRect(100, 100, 150, 150);
+        // context.fillRect(150, 100, 100, 100);
+        
+        // 線
+        // context.beginPath();
+        // context.moveTo(100,150);
+        // context.lineTo(200,150);
+        // context.lineTo(200,100);
+        // context.closePath();
+        // // context.stroke()
+        // context.fill();
+
+        //端點的樣式 lineCap = butt(default)、round、square
+       //端點銜接的樣式 lineJoin = miter(default)、bevel、round
+        
+        // 弧
+        var x = canvas.width/2;
+        var y = canvas.width/2;
+        var r = 100;
+        context.moveTo(x,y);
+        context.arc(x, y, r, 0.75 * Math.PI, 1.2 * Math.PI, true);
+        context.fill();
+
+        // 圓
+        var x1 = canvas.width/3;
+        var y1 = canvas.width/2;
+        var r1 = 20;
+        context.moveTo(x,y);
+        context.arc(x1, y1, r1, 0 * Math.PI, 2 * Math.PI, true);
+        context.fill();
+        
+
+    </script>
+</body>
+</html>

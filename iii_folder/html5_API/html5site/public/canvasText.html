@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myCanvas {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400px" height="300px"></canvas>
+    <script>
+        var canvas = document.querySelector('#myCanvas');
+        var context = canvas.getContext('2d');
+        //畫筆顏色
+        context.fillStyle = "lightblue";
+        context.strokeStyle = "pink";
+        //畫筆粗細
+        context.lineWidth = 2;
+
+        var x = canvas.width / 2;
+        var y = canvas.height / 2;
+
+        context.font = "48px arial";
+        context.textAlign = "center";
+        //context.fillText('Hello Cavans!!',x,y);
+        context.strokeText('Hello Canvas!!', x, y);
+
+    </script>
+</body>
+
+</html>
