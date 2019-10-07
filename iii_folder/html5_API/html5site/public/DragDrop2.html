@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag And Drop</title>
+    <style>
+      .zone{
+          width:600px;
+          height:150px;
+          border:2px solid rgb(255, 170, 136);
+          margin:10px;
+          display:flex;
+      }
+      .item{
+          width:100px;
+          height:50px;
+          background-color:lightsalmon;
+          margin:10px;
+          /* float: left; */
+          text-align: center;
+          /* vertical-align: middle; */
+          line-height: 50px;
+          border-radius: 5px;
+      }
+      .over {
+          border: 3px dotted lightseagreen
+      }
+    </style>
+</head>
+<body>
+    <div class="zone">
+        <div id="item1" class="item" draggable="true">Item1</div>
+        <div id="item2" class="item" draggable="true">Item2</div>        
+        <div id="item3" class="item" draggable="true">Item3</div>
+    </div>
+    <div class="zone"></div>
+    <a href="http://localhost:3000" id="a1">GoBack</a>
+
+    <script>
+        var items = document.querySelectorAll('.item');
+        for (let i = 0; i<items.length; i++) {
+            items[i].addEventListener('dragstart', dragstartHandler);
+        }
+        function dragstartHandler(event) {
+            // console.log(event);
+            // console.log(event.target.id)
+            // console.log(event.dataTransfer)
+            event.dataTransfer.setData('text/plain', event.target.id)
+        }
+
+        document.querySelector("#a1").addEventListener('click', function(event){ 
+            var flag = window.confirm(" 要回首頁ㄇ?? ");
+            if (!flag) event.preventDefault();
+        });
+
+        var zones = document.querySelectorAll('.zone');
+        for (let i = 0; i < zones.length; i++) {
+            zones[i].addEventListener('dragenter',function(event){
+               event.preventDefault();
+               event.target.classList.add('over')
+            })
+            zones[i].addEventListener('dragover', function(event){
+                event.preventDefault();
+                
+            });
+            zones[i].addEventListener('dragleave',function(event){
+               event.preventDefault();
+               event.target.classList.remove('over')
+            })
+            zones[i].addEventListener('drop', dropHandler)
+        };
+        function dropHandler(event) {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            var id = event.dataTransfer.getData('text/plain');
+            var item = document.querySelector('#' + id);
+            // event.target.appendChild(item);
+            event.target.appendChild(item.cloneNode(true))
+    }
+    </script>
+</body>
+</html>
