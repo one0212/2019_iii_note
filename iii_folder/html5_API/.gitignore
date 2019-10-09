@@ -1,6 +1,9 @@
+bin/
 node_modules/
 musics/
 videos/
 homework/
 Canvas_example/
 DrawingApp_example/
+teacher/
+svg_example/

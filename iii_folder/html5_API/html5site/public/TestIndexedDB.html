@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        if(!window.indexedDB){
+            window.indexedDB = window.mozIndexedDB || window.webkitIndexedDB;
+        }
+        var db = null;
+        window.addEventListener("load", init, false);
+        function init() {
+            var btnCreateDB = document.getElementById("buttonCreateDB");
+            btnCreateDB.addEventListener("click", createDatabase, false);
+
+            var btnDeleteDB = document.getElementById("buttonDeleteDB");
+            btnDeleteDB.addEventListener("click", deleteDatabase, false);
+
+            var btnCreateOS = document.getElementById("buttonCreateOS");
+            btnCreateOS.addEventListener("click", createObjectStore, false);
+
+            var btnDeleteOS = document.getElementById("buttonDeleteOS");
+            btnDeleteOS.addEventListener("click", deleteObjectStore, false);
+
+
+            var btnAdd = document.getElementById("buttonAdd");
+            btnAdd.addEventListener("click", addData, false);
+
+
+            var btnUpdate = document.getElementById("buttonUpdate");
+            btnUpdate.addEventListener("click", updateData, false);
+
+            var btnDelete = document.getElementById("buttonDelete");
+            btnDelete.addEventListener("click", deleteData, false);
+
+
+            var btnRead = document.getElementById("buttonReadByCursor");
+            btnRead.addEventListener("click", readDataByCursor, false);
+
+
+            var btnRead1 = document.getElementById("buttonReadByIndex");
+            btnRead1.addEventListener("click", readDataByIndex, false);
+        }
+        function errorHandle(e) {
+            console.log(e.target.error.message)
+        }
+
+        //建立資料庫
+        function createDatabase() {
+            var openDB = window.indexedDB.open('myDB', 1);
+            openDB.addEventListener('error', errorHandle);
+            openDB.addEventListener('success', function(e) {
+                console.log('success')
+                db = e.target.result;
+                console.log(db)
+            })
+            openDB.addEventListener('upgradeneeded', function(e) {
+                console.log('upgradeneeded');
+                db = e.target.result;
+                console.log(db)
+            })
+        }
+
+        //刪除資料庫
+        function deleteDatabase() {
+            var delDB = window.indexedDB.deleteDatabase("myDB");
+            delDB.addEventListener('error', errorHandle);
+            delDB.addEventListener('success', function(e){
+                 console.log('資料庫刪除成功!!');
+            })
+        }
+
+        //建立 Object Store
+        function createObjectStore() {
+            var openDB = window.indexedDB.open('myDB', 4);
+            openDB.addEventListener('error', errorHandle);
+            openDB.addEventListener('success', function(e) {
+                console.log('success')
+                db = e.target.result;
+                console.log(db)
+            })
+
+            //要在upgradeneeded事件中管理object store
+            openDB.addEventListener('upgradeneeded', function(e) {
+                console.log('upgradeneeded');
+                db = e.target.result;
+                var store = db.createObjectStore('myUserTable', {
+                    "keyPath": "userId",
+                    "autoIncrement": true
+                })
+                store.createIndex("nameIndex","name",{unique:true});
+                store.createIndex("ageIndex","age",{unique:false});
+            })
+        }
+
+        //刪除 Object Store
+        function deleteObjectStore() {
+            var openDB = window.indexedDB.open('myDB', 3);
+            openDB.addEventListener('error', errorHandle);
+            openDB.addEventListener('success', function(e) {
+                console.log('success')
+                db = e.target.result;
+                console.log(db)
+            })
+            openDB.addEventListener('upgradeneeded',function(e) {
+                console.log('upgradeneeded');
+                db = e.target.result;
+                db.deleteObjectStore('myUserTable');
+                console.log("objectStore刪除成功!!")
+            })
+        }
+
+        //新增資料
+        function addData() {
+            if (db ==null) {
+                alert('please開啟資料庫')
+            } else {
+                var trans = db.transaction(["myUserTable"], "readwrite");
+                var store = trans.objectStore("myUserTable");
+                // var storeAdd = store.add({"name": "one", "age": 18, "email": "one@.gmail.com"});
+                // storeAdd.addEventListener('success', function() {
+                //     alert('新增成功')
+                // })
+                // storeAdd.addEventListener('error', errorHandle)
+                var datas = [
+                    { "name": "Amy", "age": 25, "email": "Amy@gmail.com" },
+                    { "name": "Eric", "age": 30, "email": "Eric@gmail.com" },
+                    { "name": "Emily", "age": 28, "email": "Emily@gmail.com" },
+                    { "name": "Jeff", "age": 33, "email": "Jeff@gmail.com" },
+                    { "name": "Mary", "age": 30, "email": "Mary@gmail.com" },
+                    { "name": "Leo", "age": 27, "email": "Leo@gmail.com" }
+                ];
+                for(var i=0,max=datas.length;i<max;i++){
+                    store.add(datas[i])
+                }
+            }
+                
+
+        }
+        //修改資料
+        function updateData() {
+            if(db == null) {
+                alert('please開啟資料庫')
+            } else {
+                var trans = db.transaction(["myUserTable"], "readwrite");
+                var store = trans.objectStore("myUserTable");
+                var storePut = store.put({"name": "two", "age": 20, "email": "one@.gmail.com"});
+                storePut.addEventListener('success', function() {
+                    alert('修改成功')
+                })
+                storePut.addEventListener('error', errorHandle)
+            }
+        }
+
+        //刪除資料
+        function deleteData() {
+            if (db == null) {
+                alert('please開啟資料庫')
+            } else {
+                var trans = db.transaction(["myUserTable"], "readwrite");
+                var store = trans.objectStore("myUserTable");
+
+                var storeDel = store.delete(2);
+                storeDel.addEventListener('success', function() {
+                    alert('刪除成功')
+                })
+                storeDel.addEventListener('error', errorHandle)
+            }
+        }
+
+        //透過Cursor讀取資料
+        function readDataByCursor() {
+            if (db == null) {
+                alert('please開啟資料庫')
+            } else {
+                var trans = db.transaction(["myUserTable"], "readonly");
+                var store = trans.objectStore("myUserTable");
+
+                var cursorRequest = store.openCursor();
+                // console.log(cursorRequest)
+
+                cursorRequest.addEventListener('success', function(e) {
+                    // console.log(event.target.result.value.name)
+                    var result = e.target.result;
+                    if(!result) return
+
+                    console.log(result.value.name);
+                    result.continue();
+                })
+            }
+        }
+
+        //透過Index讀取資料
+        function readDataByIndex() {
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="建立資料庫" id="buttonCreateDB" />
+    <input type="button" value="刪除資料庫" id="buttonDeleteDB" />
+    <input type="button" value="建立ObjectStore" id="buttonCreateOS" />
+    <input type="button" value="刪除ObjectStore" id="buttonDeleteOS" />
+    <input type="button" value="新增資料" id="buttonAdd" />
+    <input type="button" value="更新資料" id="buttonUpdate" />    
+    <input type="button" value="刪除資料" id="buttonDelete" /> 
+    <input type="button" value="讀取資料(Cursor)" id="buttonReadByCursor" />
+    <input type="button" value="讀取資料(Index)" id="buttonReadByIndex" />
+    <hr />
+    <p>按下新增資料,更新資料,刪除資料,讀取資料以前,請先點選建立ObjectStore</p>
+</body>
+</html>

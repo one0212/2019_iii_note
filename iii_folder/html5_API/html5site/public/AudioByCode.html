@@ -9,6 +9,9 @@
             text-decoration: underline;
             color: blue;
         }
+        #myCanvas {
+            border: 1px solid lightsalmon;
+        }
     </style>
 
 
@@ -25,6 +28,7 @@
     <hr />
     <span id="playSong"></span>
     <span id="info"></span>
+    <canvas id="myCanvas" height="20px"></canvas>
 
 
     <script>
@@ -44,6 +48,14 @@
             eleLi.appendChild(txtLi);
             ul.appendChild(eleLi); playlist
         }
+        /////////////////// 撥放進度條
+        var canvas = document.querySelector('#myCanvas');
+        var context = canvas.getContext('2d');
+
+        context.fillStyle="lightsalmon";
+        canvas.addEventListener('click',function(event){
+            
+        })
 
         //建立Audio物件
         var audio = new Audio();
