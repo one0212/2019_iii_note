@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSE client端</title>
+</head>
+
+<body>
+    <input type="button" value="start" id="btn1">
+    <h2 id="myText"></h2>
+    <script>
+        var btn = document.querySelector("#btn1");
+        var text = document.querySelector("#myText");
+        var client = null;
+
+        btn.addEventListener('click', () => {
+            if (btn.value == "start") {
+                btn.value = "stop";
+                client = new EventSource('/api/events')
+                //    client.addEventListener("open",function(){
+                //        console.log("連線建立成功!!")
+                //    })
+                client.addEventListener('message', e => {
+                    text.innerHTML = e.data
+                })
+            } else {
+                client.close();
+                btn.value = "start"
+            }
+        });
+    </script>
+</body>
+
+</html>
