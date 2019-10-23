@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
+    <title>生命週期</title>
+</head>
+<body>
+    <div id="example1"></div>
+
+
+<script type="text/babel">
+    class LifeTime extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                opacity: 1
+            }
+            this.distoryComponent = this.distoryComponent.bind(this)
+        }
+        distoryComponent() {
+            // 從dom節點中移除元件
+            ReactDOM.unmountComponentAtNode(document.querySelector('#example1'))
+        }
+        componentDidMount(){
+            // 不用箭頭函式的話要用bind綁定this
+            this.intervalId = setInterval(() => {
+                console.log('定時器執行中...')
+                let {opacity} = this.state;
+                opacity -= 0.1;
+                if(opacity <= 0) opacity = 1
+                this.setState({opacity})
+            }, 200);
+        }
+        componentWillUnmount() {
+            // 清除定時器, 因要將intervalId讓全域都能見, 用this綁intervalId
+            clearInterval(this.intervalId)
+        }
+        render() {
+            const {opacity} = this.state
+            // const opacity1 = this.state.opacity
+            return (
+                <div>
+                    <h2 style={{opacity: opacity}}>{this.props.msg}</h2>    
+                    <button onClick={this.distoryComponent}>886</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<LifeTime msg="react太難了！！"/>, document.querySelector('#example1'));
+
+  
+</script>
+</body>
+</html>

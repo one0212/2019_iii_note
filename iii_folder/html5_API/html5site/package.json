@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
+    "package.json": "^2.0.1",
     "request": "^2.88.0",
     "serve-index": "^1.9.1",
     "websocket": "^1.0.30"

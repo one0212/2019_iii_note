@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.7.2/prop-types.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="example1"></div>
+    <div id="example2"></div>
+<script type="text/babel">
+    // function Person(props) {
+    //     return (
+    //             <ul>
+    //                 <li>姓名：{props.name}</li>
+    //                 <li>年齡：{props.age}</li>                
+    //                 <li>性別：{props.gender}</li>
+    //             </ul>
+    //     )
+    // }
+    class Person extends React.Component {
+        render() {
+            return (
+                <ul>
+                    <li>姓名：{this.props.name}</li>
+                    <li>年齡：{this.props.age}</li>                
+                    <li>性別：{this.props.gender}</li>
+                 </ul>
+            )
+        }
+    }
+    // 指定屬性預設值
+    Person.defaultProps = {
+        gender: "male",
+        age:18
+    }
+
+    // 指定屬性值的類型和必要性 須先引入prop-type.js react15.2後就棄用React.PropTypes
+    Person.propTypes = {
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number
+
+    }
+    /* (...)的作用 展開運算子
+     
+    */
+
+
+    const p1 = {name: "one", age: 25, gender: "female"};
+    ReactDOM.render(
+        //<Person name={p1.name} age={p1.age} gender={p1.gender} />, document.querySelector('#example1'));
+        // 等同於
+        <Person {...p1}/>, document.querySelector('#example1'));
+
+    const p2 = {name: 'owen'};
+    ReactDOM.render(<Person name={p2.name} />,document.querySelector("#example2"));
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.7.2/prop-types.js'></script>
+    <title>收集表單數據兩種方式</title>
+</head>
+<body>
+    <div id="example1"></div>
+
+
+<script type="text/babel">
+    class LoginForm extends React.Component {
+        constructor(props) {
+            super(props)
+            this.handleSubmit = this.handleSubmit.bind(this)
+            this.handleChange = this.handleChange.bind(this)    
+            this.state = {
+                pwd : ''
+            }            
+
+        }
+        handleSubmit(e) {
+            const name = this.nameInput.value
+            // 等同於
+            // const {value} = this.nameInput
+
+            const {pwd} = this.state
+            // 等同於
+            // const pwd = this.state.pwd
+            alert(`提交用戶名：${name}, 密碼：${pwd}`)
+
+            // 阻止事件預設行為 => 送出表單
+            e.preventDefault()
+        }
+        handleChange(e) {
+            // 讀取輸入的值
+            const pwd = e.target.value
+            
+            // 更新pwd的狀態
+            this.setState({pwd})
+        }
+
+        render() {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    {// 非受控元件
+                    }
+                    帳號：<input type="text" ref={input => this.nameInput = input}/>
+                    {// 受控元件
+                    }
+                    密碼：<input type="password" value={this.state.pwd} onChange={this.handleChange}/>
+                    <input type="submit" value="登入" />
+                </form>
+            )
+        }
+    }
+ 
+    ReactDOM.render(<LoginForm />, document.querySelector('#example1'));
+
+  
+</script>
+</body>
+</html>

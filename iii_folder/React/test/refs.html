@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.7.2/prop-types.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="example1"></div>
+    <div id="example2"></div>
+
+<script type="text/babel">
+    class MyComponent extends React.Component {
+        constructor(props) {
+            super(props)
+            this.showInput = this.showInput.bind(this)    
+            this.handleBlur = this.handleBlur.bind(this)            
+
+        }
+
+        showInput() {
+            const myInput = this.refs.content
+            //第一個input
+            // alert(myInput.value) 
+            // 第二個input
+            alert(this.input.value)
+        }
+
+        handleBlur(e) {
+            alert(e.target.value)
+        }
+        render() {
+            return (
+                <div>
+                    <input type="text" ref="content" />
+                    <input type="text" ref={input => this.input = input}/>
+                    {/* <input type="text" ref={input => this.input = input}/>
+                        <input type="text" ref={形式參數 => this.自定義 = input}/>*/}
+                
+
+                    <button onClick={this.showInput}>提示輸入</button>
+                    <input type="text" placeholder="失去焦點提示內容" onBlur={this.handleBlur}/>
+                </div>
+            )
+        }
+    }
+ 
+    ReactDOM.render(<MyComponent />, document.querySelector('#example1'));
+
+  
+</script>
+</body>
+</html>
